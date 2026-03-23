@@ -8,7 +8,6 @@
 
 简单在于结构好理解，灵活在于解题思路多。双指针和滑动窗口，就是两种最通用的解题范式。
 
----
 
 ## 双指针：从两端向中间逼近
 
@@ -39,7 +38,6 @@ public int[] twoSum(int[] numbers, int target) {
 
 **追问：如果数组无序呢？** 用哈希表，时间复杂度同样是 O(n)，但空间复杂度变成 O(n)。
 
----
 
 ### 经典问题：移除元素
 
@@ -62,7 +60,6 @@ public int removeElement(int[] nums, int val) {
 
 快指针负责遍历，慢指针负责写入。不等于 val 的元素被保留并前移，等于 val 的元素被跳过。
 
----
 
 ### 对撞指针：验证回文串
 
@@ -86,7 +83,6 @@ public boolean isPalindrome(String s) {
 }
 ```
 
----
 
 ## 滑动窗口：变长窗口的艺术
 
@@ -111,7 +107,6 @@ public int maxSubArray(int[] nums) {
 
 **当累积和变成负数时，重新从当前位置开始计数**，因为负数只会拖累后面的和。
 
----
 
 ### 经典问题：长度最小的子数组
 
@@ -135,7 +130,6 @@ public int minSubArrayLen(int target, int[] nums) {
 
 **窗口扩大（右移 right）** → **窗口收缩（左移 left）** → 循环往复。每次收缩时更新最小长度。
 
----
 
 ## 链表中的双指针
 
@@ -161,7 +155,6 @@ public ListNode middleNode(ListNode head) {
 
 让 fast 先走一步：`fast = head.next`，这样 slow 就是中点前一个。
 
----
 
 ### 判断环形链表
 
@@ -183,7 +176,6 @@ public boolean hasCycle(ListNode head) {
 
 **为什么一定会相遇？** 想象两个人在环形跑道上跑，一个快一个慢——相对速度是 1，在有限的环上必定追上。
 
----
 
 ### 环形链表入口：进阶问题
 
@@ -211,7 +203,6 @@ public ListNode detectCycle(ListNode head) {
 
 **数学推导：** 设从头到入口距离为 F，环长为 C，相遇时慢指针走了 F + a，快指针走了 F + a + nC。两倍关系：`2(F + a) = F + a + nC`，所以 `F = nC - a`。即从相遇点走到入口的距离，等于从头走到入口的距离——所以两指针分别从相遇点和头节点出发，一定在入口相遇。
 
----
 
 ## 双指针小结
 
@@ -225,7 +216,6 @@ public ListNode detectCycle(ListNode head) {
 | 链表中点 | 快慢指针 | 快走两步，慢走一步 |
 | 环形链表 | 快慢指针 | 同向追逐，必定相遇 |
 
----
 
 ## 练习建议
 

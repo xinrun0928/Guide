@@ -8,7 +8,6 @@
 
 今天，我们来深入探讨红包雨/抽奖系统的设计与实现。
 
----
 
 ## 一、红包雨 vs 普通抽奖
 
@@ -47,7 +46,6 @@
 4. 如何应对瞬时流量？
 ```
 
----
 
 ## 二、资金系统设计
 
@@ -155,7 +153,6 @@ public class BalanceService {
 }
 ```
 
----
 
 ## 三、红包系统设计
 
@@ -352,7 +349,6 @@ public class RedPacketRedisService {
 }
 ```
 
----
 
 ## 四、抽奖系统设计
 
@@ -504,7 +500,6 @@ public class LotteryService {
 }
 ```
 
----
 
 ## 五、高并发处理
 
@@ -568,7 +563,6 @@ public class HotDataService {
 }
 ```
 
----
 
 ## 六、面试追问方向
 
@@ -605,7 +599,6 @@ public class HotDataService {
 4. 补偿机制：异常时自动补偿
 ```
 
----
 
 ## 七、总结
 

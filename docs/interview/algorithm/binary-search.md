@@ -10,7 +10,6 @@
 
 **最容易出错的地方**：边界条件——`left < right` 还是 `left <= right`？`mid = (left + right) >>> 1`？
 
----
 
 ## 标准二分查找
 
@@ -36,7 +35,6 @@ public int binarySearch(int[] nums, int target) {
 - `mid = left + ((right - left) >>> 1)`（右移 1 位等于除以 2，逻辑右移防溢出）
 - `left = mid + 1` / `right = mid - 1`（避免死循环）
 
----
 
 ## 高频题一：搜索旋转排序数组
 
@@ -73,7 +71,6 @@ public int search(int[] nums, int target) {
 
 **判断哪半边有序**：只需看 `nums[left]` 和 `nums[mid]` 的关系。
 
----
 
 ## 高频题二：寻找旋转排序数组的最小值
 
@@ -98,7 +95,6 @@ public int findMin(int[] nums) {
 
 **关键判断**：`nums[mid] > nums[right]` 说明最小值在右边，`nums[mid] <= nums[right]` 说明最小值在左边或就是 mid。
 
----
 
 ## 高频题三：寻找峰值
 
@@ -121,7 +117,6 @@ public int findPeakElement(int[] nums) {
 }
 ```
 
----
 
 ## 高频题四：在排序数组中查找元素的第一个和最后一个位置
 
@@ -157,7 +152,6 @@ private int findBound(int[] nums, int target, boolean findFirst) {
 }
 ```
 
----
 
 ## 二分查找的边界问题总结
 
@@ -167,7 +161,6 @@ private int findBound(int[] nums, int target, boolean findFirst) {
 | `left < right` | `left == right` | `left = mid + 1` / `right = mid` | 极值问题 |
 | `left + 1 < right` | 相邻时退出 | 逐步缩小 | 最近邻居 |
 
----
 
 ## 面试延伸问题
 
@@ -191,7 +184,6 @@ private int findBound(int[] nums, int target, boolean findFirst) {
 | 旋转数组 | 判断哪一半有序 |
 | 二维矩阵 | 从角落出发 |
 
----
 
 ## 总结
 

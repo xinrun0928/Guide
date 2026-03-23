@@ -21,7 +21,6 @@ void backtrack(路径, 选择列表) {
 }
 ```
 
----
 
 ## 高频题一：全排列
 
@@ -53,7 +52,6 @@ private void backtrack(List<Integer> path, int[] nums,
 
 **关键点**：`used[i]` 标记 nums[i] 是否已在当前路径中（避免重复选择），`path.remove()` + `used[i] = false` 完成回溯。
 
----
 
 ## 高频题二：全排列 II（含重复元素）
 
@@ -91,7 +89,6 @@ private void backtrack(List<Integer> path, int[] nums,
 }
 ```
 
----
 
 ## 高频题三：组合
 
@@ -120,7 +117,6 @@ private void backtrack(int start, int n, int k,
 }
 ```
 
----
 
 ## 高频题四：N 皇后
 
@@ -175,7 +171,6 @@ private List<String> construct(char[][] board) {
 }
 ```
 
----
 
 ## 回溯剪枝策略
 
@@ -188,7 +183,6 @@ private List<String> construct(char[][] board) {
 | **约束检查** | N 皇后、数独 |
 | **排序预处理** | 便于去重和剪枝 |
 
----
 
 ## 回溯 vs DFS vs BFS
 
@@ -199,7 +193,6 @@ private List<String> construct(char[][] board) {
 | 记忆 | 撤销选择 | 不撤销 | 不撤销 |
 | 适用场景 | 决策树、组合 | 连通性、拓扑 | 最短路径、层序 |
 
----
 
 ## 面试延伸问题
 
@@ -214,7 +207,6 @@ private List<String> construct(char[][] board) {
 
 一个简单判断：**如果需要列出所有可能的答案 → 回溯；如果只需要最值 → DP**。
 
----
 
 ## 总结
 

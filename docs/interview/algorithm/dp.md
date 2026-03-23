@@ -11,7 +11,6 @@
 2. **无后效性**：某个状态一旦确定，之后不受后续决策影响
 3. **重叠子问题**：子问题会被重复计算（这正是 DP 要解决的核心痛点）
 
----
 
 ## 入门：爬楼梯
 
@@ -34,7 +33,6 @@ public int climbStairs(int n) {
 
 **空间优化**：只保留前两个值 → O(1) 空间。
 
----
 
 ## 高频题一：打家劫舍
 
@@ -58,7 +56,6 @@ public int rob(int[] nums) {
 
 **变体：房屋围成环（首尾不能同时偷）** → 取 `max(rob(0, n-2), rob(1, n-1))` 两种情况。
 
----
 
 ## 高频题二：0-1 背包问题
 
@@ -80,7 +77,6 @@ public int knapsack(int[] weights, int[] values, int capacity) {
 
 **为什么逆序？** 正序会导致同一物品被重复选择（01 背包每个物品只能用一次）。
 
----
 
 ## 高频题三：完全背包问题
 
@@ -102,7 +98,6 @@ public int completeKnapsack(int[] weights, int[] values, int capacity) {
 
 **0-1 背包 vs 完全背包**：逆序 = 0-1，正序 = 完全。
 
----
 
 ## 高频题四：股票买卖系列
 
@@ -189,7 +184,6 @@ public int maxProfitCooldown(int[] prices) {
 }
 ```
 
----
 
 ## DP 通用解题框架
 
@@ -199,7 +193,6 @@ public int maxProfitCooldown(int[] prices) {
 4. **计算顺序**：从前往后或从后往前
 5. **空间优化**：如果只用到前几个值，就降维
 
----
 
 ## 总结
 

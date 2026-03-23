@@ -8,7 +8,6 @@
 
 今天，我们来深入探讨配置中心的设计与实现。
 
----
 
 ## 一、为什么需要配置中心？
 
@@ -66,7 +65,6 @@
 └─────────────────────────────────────────────────────────┘
 ```
 
----
 
 ## 二、核心概念
 
@@ -135,7 +133,6 @@ app (应用)
 - config: redis.maxConnections = 100
 ```
 
----
 
 ## 三、核心实现
 
@@ -308,7 +305,6 @@ public class ConfigClient {
 }
 ```
 
----
 
 ## 四、高级特性
 
@@ -474,7 +470,6 @@ public class ConfigPermissionService {
 }
 ```
 
----
 
 ## 五、高可用设计
 
@@ -558,7 +553,6 @@ public class LocalConfigCache {
 }
 ```
 
----
 
 ## 六、面试追问方向
 
@@ -595,7 +589,6 @@ public class LocalConfigCache {
 4. 支持灰度回滚
 ```
 
----
 
 ## 七、总结
 

@@ -10,7 +10,6 @@
 
 今天，我们来深入探讨如何设计一个高可用的系统。
 
----
 
 ## 一、什么是可用性？
 
@@ -50,7 +49,6 @@ CAP 理论告诉我们：
 - 核心流程强一致，非核心流程可用
 ```
 
----
 
 ## 二、高可用架构原则
 
@@ -138,7 +136,6 @@ public class RedundancyDesign {
 }
 ```
 
----
 
 ## 三、高可用技术方案
 
@@ -346,7 +343,6 @@ public class RetryAndIdempotency {
 }
 ```
 
----
 
 ## 四、高可用存储
 
@@ -443,7 +439,6 @@ public class RedisHA {
 }
 ```
 
----
 
 ## 五、降级与应急预案
 
@@ -534,7 +529,6 @@ public class EmergencyPlan {
 }
 ```
 
----
 
 ## 六、面试追问方向
 
@@ -600,7 +594,6 @@ public class EmergencyPlan {
    - 防止级联故障
 ```
 
----
 
 ## 七、总结
 

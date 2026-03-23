@@ -6,14 +6,12 @@
 
 以下是一份 2-3 年经验 Java 后端工程师的简历模板，供参考。
 
----
 
 ```markdown
 # 张三
 📱 138-xxxx-xxxx | ✉️ zhangsan@email.com | 🔗 github.com/zhangsan | 📝 blog.zhangsan.com
 后端开发工程师 | 3 年经验 | Java / Spring Cloud 技术栈
 
----
 
 ## 技术栈
 **后端**：Java（JDK 17）、Spring Boot、Spring Cloud Alibaba、Dubbo、MyBatis-Plus
@@ -22,7 +20,6 @@
 **DevOps**：Docker、K8s、Jenkins、Prometheus
 **工具**：Git、Maven、Arthas、JMeter
 
----
 
 ## 工作经历
 
@@ -49,7 +46,6 @@
 
 **技术栈**：Spring Security、JWT、Redis、ShardingSphere
 
----
 
 ## 项目经历（精选）
 
@@ -62,12 +58,10 @@
 - 订单异步化处理，消息堆积时自动降级，用户体验无感知
 - 压测验证：JMeter 模拟 10 万并发，系统稳定运行 30 分钟无异常
 
----
 
 ## 教育背景
 西安电子科技大学 | 计算机科学与技术 | 本科 | 2017.09 - 2021.06
 
----
 
 ## 证书与荣誉
 - Oracle Certified Professional, Java SE 8 Programmer
@@ -75,7 +69,6 @@
 - LeetCode 刷题 300+，周赛最高排名 500
 ```
 
----
 
 ## 简历模板使用说明
 
@@ -95,7 +88,6 @@
 3. **量化数据必须真实**：数据可以是估算，但必须能自圆其说
 4. **个人隐私要保护**：身份证号、详细住址不要出现在简历上
 
----
 
 ## 常见参考资源
 
@@ -104,7 +96,6 @@
 - **LeetCode**：刷题数量可以写，体现算法能力
 - **竞赛**：ACM、数学建模等竞赛获奖要写
 
----
 
 ## 总结
 

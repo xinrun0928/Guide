@@ -22,7 +22,6 @@
 
 核心思想：**用内存换速度**。Redis 的读写 QPS 能达到 10 万+，而 MySQL 只有几千。
 
----
 
 ## 缓存读写策略
 
@@ -56,7 +55,6 @@ public void updateUser(String userId, String name) {
 }
 ```
 
----
 
 ### Read-Through（读穿透）
 
@@ -70,7 +68,6 @@ public void updateUser(String userId, String name) {
 
 写入时只更新缓存，缓存异步批量写入数据库。性能最高，但风险也最大——缓存挂了数据可能丢失。
 
----
 
 ## 缓存常见问题
 
@@ -143,7 +140,6 @@ public String getUser(String userId) {
 - 搭建 Redis 集群（主从 + 哨兵）
 - 多级缓存：本地缓存 + 分布式缓存
 
----
 
 ## 缓存更新策略
 
@@ -157,7 +153,6 @@ public String getUser(String userId) {
 
 **核心原则**：在分布式并发环境下，**先操作数据库，再操作缓存**，且优先选择「删除」而非「更新」。
 
----
 
 ## 面试延伸问题
 
@@ -174,7 +169,6 @@ public String getUser(String userId) {
 | 一致性 | 好（集中管理）| 差（需要同步）|
 | 适用 | 跨进程共享数据 | 极高频访问的本地数据 |
 
----
 
 ## 总结
 

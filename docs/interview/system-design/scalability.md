@@ -10,7 +10,6 @@
 
 今天，我们来深入探讨如何设计一个可扩展的架构。
 
----
 
 ## 一、什么是可扩展性？
 
@@ -57,7 +56,6 @@
 - 错误的架构，加再多服务器也没用
 ```
 
----
 
 ## 二、扩展性原则
 
@@ -195,7 +193,6 @@ public class SyncVsAsync {
 }
 ```
 
----
 
 ## 三、扩展性架构设计
 
@@ -331,7 +328,6 @@ public class EventDrivenArchitecture {
 }
 ```
 
----
 
 ## 四、扩展性评估
 
@@ -418,7 +414,6 @@ public class ScalabilityTest {
 }
 ```
 
----
 
 ## 五、常见扩展性问题
 
@@ -522,7 +517,6 @@ public class CacheScaling {
 }
 ```
 
----
 
 ## 六、面试追问方向
 
@@ -594,7 +588,6 @@ public class CacheScaling {
 - 微服务是手段，不是目标
 ```
 
----
 
 ## 七、总结
 

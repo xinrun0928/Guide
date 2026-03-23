@@ -10,7 +10,6 @@
 
 今天，我们来深入探讨如何设计一个高性能的排行榜系统。
 
----
 
 ## 一、需求分析
 
@@ -43,7 +42,6 @@
 - **数据准确**：Top 100 必须精确，尾部可以允许误差
 - **低延迟**：读取 < 50ms
 
----
 
 ## 二、容量估算
 
@@ -74,7 +72,6 @@ public class RankingCapacityEstimation {
 }
 ```
 
----
 
 ## 三、核心数据结构
 
@@ -231,7 +228,6 @@ public class ScoreUpdateService {
 }
 ```
 
----
 
 ## 四、进阶设计
 
@@ -398,7 +394,6 @@ public class DistributedRankingService {
 }
 ```
 
----
 
 ## 五、热搜系统设计
 
@@ -501,7 +496,6 @@ public class HotSearchService {
 }
 ```
 
----
 
 ## 六、面试追问方向
 
@@ -538,7 +532,6 @@ Redis ZSet 的更新是原子的，使用 ZINCRBY 命令。
 4. 人工审核：敏感话题人工干预
 ```
 
----
 
 ## 七、总结
 

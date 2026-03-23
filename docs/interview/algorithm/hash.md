@@ -14,7 +14,6 @@
 
 **但 O(1) 不是没有代价的——哈希冲突、空间利用率、扩容成本，都是潜在的坑。**
 
----
 
 ## 高频题一：两数之和
 
@@ -41,7 +40,6 @@ public int[] twoSum(int[] nums, int target) {
 
 **关键细节：为什么要先检查再插入？** 如果先插入再检查，会导致自己和自己配对（`nums[i] + nums[i] == target`）的情况被误判。先检查再插入，保证配对的两个数下标不同。
 
----
 
 ## 高频题二：字母异位词分组
 
@@ -87,7 +85,6 @@ public List<List<String>> groupAnagrams(String[] strs) {
 
 排序方法时间复杂度 O(n * k log k)，字符计数方法 O(n * k)，后者更优。
 
----
 
 ## 高频题三：最长连续序列
 
@@ -118,7 +115,6 @@ public int longestConsecutive(int[] nums) {
 
 **关键优化**：只有当 `num - 1` 不存在时，才认为 num 是序列起点。这样每个序列只遍历一次，时间复杂度 O(n)，空间复杂度 O(n)。
 
----
 
 ## 高频题四：存在重复元素 II
 
@@ -137,7 +133,6 @@ public boolean containsNearbyDuplicate(int[] nums, int k) {
 }
 ```
 
----
 
 ## 面试中的延伸问题
 
@@ -147,7 +142,6 @@ public boolean containsNearbyDuplicate(int[] nums, int k) {
 
 **面试加分回答**：在 Java 中，HashMap 会在链表长度超过 8 时转为红黑树，所以最坏复杂度是 O(log n)。Python 的 dict 使用开放地址法，扩容时会重新哈希。
 
----
 
 ### Q2：哈希表和数组该怎么选择？
 
@@ -158,7 +152,6 @@ public boolean containsNearbyDuplicate(int[] nums, int k) {
 | 键是连续整数 | 数组 | 更省空间，避免哈希开销 |
 | 需要范围查询 | 数组 / TreeMap | 哈希表不支持范围查询 |
 
----
 
 ### Q3：如果面试官追问「哈希冲突怎么解决」？
 
@@ -167,7 +160,6 @@ public boolean containsNearbyDuplicate(int[] nums, int k) {
 - **拉链法（Separate Chaining）**：冲突的元素用链表（或红黑树）挂在同一个桶下。Java HashMap 用这个。
 - **开放地址法（Open Addressing）**：冲突时按探测策略（线性探测、二次探测、双重哈希）找下一个空桶。
 
----
 
 ## 总结
 

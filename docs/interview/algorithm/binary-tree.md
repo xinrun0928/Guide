@@ -15,7 +15,6 @@ public class TreeNode {
 
 面试中，二叉树的问题通常围绕**遍历**和**递归**展开。
 
----
 
 ## 高频题一：二叉树的前序、中序、后序遍历
 
@@ -51,7 +50,6 @@ public List<Integer> preorderIter(TreeNode root) {
 }
 ```
 
----
 
 ### 中序遍历（左 → 根 → 右）
 
@@ -77,7 +75,6 @@ public List<Integer> inorderIter(TreeNode root) {
 
 中序遍历 BST（二叉搜索树）的结果是**升序数组**，这是很多题目的突破口。
 
----
 
 ### 后序遍历（左 → 右 → 根）
 
@@ -100,7 +97,6 @@ public List<Integer> postorderIter(TreeNode root) {
 
 **巧记**：后序遍历 = 前序遍历「根右左」→ 翻转得到「左右根」。
 
----
 
 ## 高频题二：二叉树的层序遍历
 
@@ -127,7 +123,6 @@ public List<List<Integer>> levelOrder(TreeNode root) {
 }
 ```
 
----
 
 ## 高频题三：路径总和
 
@@ -146,7 +141,6 @@ public boolean hasPathSum(TreeNode root, int targetSum) {
 }
 ```
 
----
 
 ## 高频题四：二叉树的最近公共祖先（LCA）
 
@@ -171,7 +165,6 @@ public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 - 如果都在右子树，递归右子树
 - 如果有一个等于 root，直接返回 root
 
----
 
 ## 高频题五：二叉搜索树的最近公共祖先
 
@@ -194,7 +187,6 @@ public TreeNode lowestCommonAncestorBST(TreeNode root, TreeNode p, TreeNode q) {
 
 比普通二叉树简单得多，因为可以根据值的大小判断方向。
 
----
 
 ## 二叉树面试总结
 
@@ -207,7 +199,6 @@ public TreeNode lowestCommonAncestorBST(TreeNode root, TreeNode p, TreeNode q) {
 | 路径总和 | target - node.val | 递归返回值 |
 | 最近公共祖先 | 左右子树各找到一个 | 存储父节点再回溯 |
 
----
 
 ## 面试延伸问题
 
@@ -221,7 +212,6 @@ public TreeNode lowestCommonAncestorBST(TreeNode root, TreeNode p, TreeNode q) {
 - 如果面试官追问非递归实现，要有准备
 - BST 相关题目，优先考虑利用 BST 特性（值域判断）
 
----
 
 ## 练习建议
 

@@ -10,7 +10,6 @@
 
 今天，我们来深入探讨 Feed 流系统的设计。
 
----
 
 ## 一、Feed 流的本质
 
@@ -48,7 +47,6 @@ Feed 流：
 本文主要讨论 Timeline 的设计
 ```
 
----
 
 ## 二、三种实现模式
 
@@ -275,7 +273,6 @@ public class HybridFeedService {
 }
 ```
 
----
 
 ## 三、缓存设计
 
@@ -347,7 +344,6 @@ public class FeedCacheService {
 }
 ```
 
----
 
 ## 四、推、拉模式的权衡
 
@@ -379,7 +375,6 @@ public class FeedCacheService {
 - 可以根据用户类型动态调整
 ```
 
----
 
 ## 五、进阶功能
 
@@ -466,7 +461,6 @@ public class ReadMarkService {
 }
 ```
 
----
 
 ## 六、面试追问方向
 
@@ -503,7 +497,6 @@ public class ReadMarkService {
 4. 如果用户不在，在下次刷新时展示
 ```
 
----
 
 ## 七、总结
 

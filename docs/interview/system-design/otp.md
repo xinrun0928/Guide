@@ -8,7 +8,6 @@
 
 今天，我们来深入探讨一次性密码（OTP）系统的设计与实现。
 
----
 
 ## 一、OTP 系统概述
 
@@ -40,7 +39,6 @@
 - **双因素认证**：Google Authenticator、Microsoft Authenticator
 - **动态口令卡**：银行 U 盾、企业 VPN
 
----
 
 ## 二、TOTP 算法实现
 
@@ -169,7 +167,6 @@ public class OTPSecretGenerator {
 }
 ```
 
----
 
 ## 三、短信验证码系统
 
@@ -361,7 +358,6 @@ public class OTPSecurityProtection {
 }
 ```
 
----
 
 ## 四、存储设计
 
@@ -478,7 +474,6 @@ public class OTPSendLogService {
 }
 ```
 
----
 
 ## 五、面试追问方向
 
@@ -516,7 +511,6 @@ public class OTPSendLogService {
 4. 旧验证码立即失效
 ```
 
----
 
 ## 六、总结
 

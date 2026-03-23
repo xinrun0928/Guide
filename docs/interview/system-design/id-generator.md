@@ -10,7 +10,6 @@
 
 这就是分布式 ID 生成器的核心问题。
 
----
 
 ## 一、问题分析
 
@@ -39,7 +38,6 @@ UUID 的问题：
 | 雪花算法 | ✅ | 快 | ✅ | 中 |
 | Redis INCR | ✅ | 快 | ✅ | 中 |
 
----
 
 ## 二、雪花算法详解
 
@@ -265,7 +263,6 @@ public class SnowflakeWithBackup {
 }
 ```
 
----
 
 ## 三、数据库自增 ID 方案
 
@@ -350,7 +347,6 @@ public class DatabaseIdGenerator {
 }
 ```
 
----
 
 ## 四、Redis 方案
 
@@ -442,7 +438,6 @@ public class RedisIdGenerator {
 }
 ```
 
----
 
 ## 五、延伸问题
 
@@ -480,7 +475,6 @@ public class RedisIdGenerator {
 推荐：机器 IP 转数字，取低 10 位
 ```
 
----
 
 ## 六、总结
 
