@@ -16,7 +16,7 @@ echo "guide.docs.zxinrun.cn" > CNAME
 git init
 
 # 添加远程仓库
-git remote add origin git@github.com:xinrun0928/DBInsight.git
+git remote add origin git@github.com:xinrun0928/Guide.git
 
 # 添加所有文件
 git add -A
