@@ -1,0 +1,92 @@
+---
+description: VitePress documentation standards and link rules
+globs: docs/**/*.md
+alwaysApply: true
+---
+
+# VitePress 文档规范
+
+## 链接规则
+
+### 绝对路径 vs 相对路径
+
+- 使用 `/mysql/xxx` 格式的绝对路径，而非相对路径
+- 目录跳转使用 `/directory/index` 而非 `/directory`
+
+### 跨模块链接格式
+
+```markdown
+# 正确
+[MySQL 基础](/mysql/sql/basic/overview)
+[事务与锁](/mysql/transaction/index)
+[性能优化](/mysql/optimize/index)
+
+# 错误
+[MySQL 基础](../mysql/sql/basic/overview)
+[MySQL 基础](./mysql/sql/basic/overview)
+[/mysql/sql/basic/overview]
+```
+
+### 导航栏对应模块链接
+
+| 导航项 | 链接格式 |
+|-----|-----|
+| MySQL 数据库 | `/mysql/xxx` |
+| MongoDB | `/mongodb/xxx` |
+| Redis | `/redis/xxx` |
+| PostgreSQL | `/postgresql/xxx` |
+
+## 代码规范
+
+### 泛型转义
+
+代码中的泛型类型需要使用 HTML 转义符，避免被解析为 HTML 标签：
+
+```markdown
+# 正确
+`List&lt;String&gt;`
+`Map&lt;String, Integer&gt;`
+`&lt;T&gt;`
+
+# 错误
+`List<String>`
+`Map<String, Integer>`
+`<T>`
+```
+
+### 反引号包裹
+
+- 单行代码片段使用反引号 \`
+- 多行代码使用三反引号 \`\`\`
+
+## 文件结构
+
+### 必需文件
+
+- 每个模块目录必须有 `index.md`
+- 目录名使用 kebab-case（小写加连字符）
+
+### Sidebar 同步
+
+- 添加新模块到导航栏时，同时更新 `docs/.vitepress/nav.js`
+- 添加新 sidebar 时，同步更新 `docs/.vitepress/sidebar.js`
+- 创建对应的 sidebar 文件 `docs/.vitepress/sidebar/[module].js`
+
+## 常见错误避免
+
+1. **死链接**：VitePress 构建时会检查所有链接，确保目标文件存在
+2. **链接路径错误**：
+   - `../sql/function` → `/mysql/sql/function`
+   - `../../transaction/lock` → `/mysql/transaction/lock`
+3. **缺失 index.md**：链接到目录时必须确保目录有 index.md
+4. **泛型未转义**：`List<String>` → `List&lt;String&gt;`
+
+## 新增文档检查清单
+
+- [ ] 文件放在正确的模块目录下
+- [ ] 链接使用绝对路径 `/module/xxx`
+- [ ] 导航栏已添加对应入口（如需要）
+- [ ] Sidebar 已更新（如需要）
+- [ ] 代码中的泛型使用转义符
+- [ ] 运行 `npm run build` 验证无死链接
+

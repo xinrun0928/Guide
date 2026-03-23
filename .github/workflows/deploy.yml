@@ -1,0 +1,81 @@
+# 工作流名称
+name: Deploy to GitHub Pages
+
+# 触发条件
+on:
+  # 当 main 分支有代码推送时自动触发
+  push:
+    branches: [main]
+  # 允许手动触发（在 GitHub Actions 页面点击 Run workflow）
+  workflow_dispatch:
+
+# 权限设置（GitHub Pages 部署需要这些权限）
+permissions:
+  contents: read        # 读取仓库内容
+  pages: write         # 写入 GitHub Pages
+  id-token: write      # 身份验证令牌
+
+# 并发控制：同一时间只运行一个部署任务
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # ============================================
+  # 第一步：构建项目
+  # ============================================
+  build:
+    runs-on: ubuntu-latest  # 在 Ubuntu 最新版虚拟机上运行
+
+    steps:
+      # 1. 检出代码 - 拉取仓库代码到 runner
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. 安装 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'      # 使用 Node.js 20 LTS 版本
+          cache: 'npm'            # 缓存 npm 依赖，加快构建速度
+
+      # 3. 安装依赖 - 根据 package-lock.json 安装（比 npm install 更稳定）
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. 构建项目 - 生成静态网站文件
+      - name: Build website
+        env:
+          # 标记为生产环境部署，使用 /JTechVault/ 作为 base 路径
+          VITEPRESS_DEPLOY: true
+        run: npm run build
+
+      # 5. 配置 GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # 6. 上传构建产物 - 将 dist 目录作为 artifact 上传
+      - name: Upload build artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  # ============================================
+  # 第二步：部署到 GitHub Pages
+  # ============================================
+  deploy:
+    # 部署任务依赖于 build 任务完成
+    needs: build
+
+    # 指定部署环境
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      # 使用 GitHub Pages 官方 action 部署 artifact
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

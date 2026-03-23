@@ -1,0 +1,219 @@
+---
+description: DBInsight 项目规范与文档编写标准
+alwaysApply: true
+---
+
+# DBInsight 项目规范
+
+## 项目概述
+
+DBInsight 是一个基于 VitePress 构建的数据库技术文档网站，当前主要涵盖 MySQL 数据库，未来将扩展至 MongoDB、Redis 等主流数据库。
+
+主要文档模块：
+
+- `mysql/` - MySQL 数据库（SQL 语法、事务优化、主从复制）
+- `mongodb/` - MongoDB 文档型数据库（规划中）
+- `redis/` - Redis 缓存数据库（规划中）
+- `guide/` - 文档使用指南
+
+## 通用规范
+
+### 内容质量
+
+- 所有代码示例必须可运行，避免伪代码
+- SQL 代码使用合理的命名规范和注释
+- 复杂概念需添加必要的解释说明
+
+### 文档结构
+
+- 使用标准 Markdown 语法
+- 标题层级控制在 3 级以内（`#` / `##` / `###`）
+- 代码块必须指定语言类型：` ```sql ` / ` ```bash ` 等
+- 图片存放在 `docs/public/images/` 目录下
+
+### 文件命名
+
+- 使用 kebab-case 命名法（如 `window-cte.md`）
+- 避免使用中文文件名
+- 保持名称简洁且具有描述性
+
+## VitePress 配置规范
+
+### 配置目录结构
+
+```
+docs/.vitepress/
+├── config.js      # 主配置文件
+├── nav.js         # 导航栏配置
+├── sidebar.js     # 侧边栏配置
+└── sidebar/       # 各模块侧边栏
+    └── mysql.js
+```
+
+### 添加新页面
+
+1. 在对应目录下创建 Markdown 文件
+2. 更新 `docs/.vitepress/sidebar/` 下的相关配置
+3. 更新 `docs/.vitepress/nav.js` 添加导航（如果需要）
+
+## 数据库文档编写规范
+
+### 代码示例要求
+
+```sql
+-- ✅ GOOD: 完整可运行的示例
+CREATE TABLE students (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    age INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ❌ BAD: 避免使用伪代码或省略关键部分
+CREATE TABLE t1 (id int, name varchar);
+```
+
+```sql
+-- ✅ GOOD: 带注释的示例
+-- 查询学生及其选课信息
+SELECT s.name, c.course_name
+FROM students s
+LEFT JOIN courses c ON s.id = c.student_id;
+```
+
+### 概念解释
+
+- 首次出现的技术术语使用加粗标注
+- 复杂概念配合图表或代码示例说明
+- 引用其他文档页面时使用绝对路径
+
+### 常见内容组织
+
+```
+# 页面标题
+
+## 概述
+简短介绍这是什么、解决什么问题
+
+## 核心概念
+关键技术点说明
+
+## 使用场景
+适用场景与不适用场景
+
+## 示例代码
+可运行的完整示例
+
+## 注意事项
+常见错误、最佳实践
+
+## 相关链接
+相关文档页面链接
+```
+
+## 修改指南
+
+### 修改现有文档
+
+- 保持原有结构和风格一致
+- 更新代码示例确保可运行
+- 添加修改说明或更新日期
+
+### 添加新内容
+
+- 确保内容与现有模块匹配
+- 更新对应的 sidebar 配置
+- 检查导航栏是否需要更新
+
+---
+
+## 常见错误避免（重要）
+
+### 1. SQL 编写错误
+
+#### 1.1 关键字大小写不一致
+
+```sql
+-- ❌ 错误：混用大小写
+SELECT name FROM users WHERE age > 18;
+
+-- ✅ 正确：关键字统一大写
+SELECT name FROM users WHERE age > 18;
+```
+
+#### 1.2 缺少必要的空格或引号
+
+```sql
+-- ❌ 错误：字符串值未加引号
+SELECT * FROM users WHERE name = zhang;
+
+-- ✅ 正确：字符串值加单引号
+SELECT * FROM users WHERE name = 'zhang';
+```
+
+### 2. 链接错误
+
+#### 2.1 使用相对路径
+
+```markdown
+<!-- ❌ 错误 -->
+[MySQL 基础](../mysql/basic/overview)
+
+<!-- ✅ 正确 -->
+[MySQL 基础](/mysql/basic/overview)
+```
+
+#### 2.2 链接到目录但不指定 index
+
+```markdown
+<!-- ❌ 错误 -->
+[MySQL](/mysql)
+
+<!-- ✅ 正确 -->
+[MySQL](/mysql/index)
+```
+
+### 3. 排版格式错误
+
+#### 3.1 标题衔接问题
+
+```markdown
+<!-- ❌ 错误：两个标题之间直接用横线分隔 -->
+# 一级标题
+
+---
+
+## 二级标题
+
+<!-- ✅ 正确：标题之间有内容 -->
+# 一级标题
+
+正文内容。
+
+## 二级标题
+```
+
+#### 3.2 代码块缺少语言标记
+
+```markdown
+<!-- ❌ 错误 -->
+```
+SELECT * FROM users;
+```
+
+<!-- ✅ 正确 -->
+```sql
+SELECT * FROM users;
+```
+```
+
+---
+
+## 自检清单
+
+- [ ] 技术细节是否准确？
+- [ ] SQL 示例是否可运行？
+- [ ] 链接是否使用绝对路径？
+- [ ] 代码块是否指定了语言类型？
+- [ ] 标题之间是否有内容？
+- [ ] 运行 npm run build 验证无死链接？

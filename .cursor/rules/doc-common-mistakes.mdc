@@ -1,0 +1,43 @@
+---
+description: Documentation common mistakes checklist
+globs: docs/**/*.md
+alwaysApply: true
+---
+
+# Documentation Common Mistakes
+
+## Code Mistakes
+
+### SQL Reserved Words as Identifiers
+- WRONG: `SELECT name, date FROM users;` (date is reserved)
+- CORRECT: Use backticks or choose different names
+
+### Unescaped Special Characters
+- WRONG: Strings with single quotes not escaped
+- CORRECT: Use `\'` or set proper escaping
+
+## Link Mistakes
+
+### Relative Paths
+- WRONG: `../mysql/sql/basic/overview`
+- CORRECT: `/mysql/sql/basic/overview`
+
+### Directory Without Index
+- WRONG: `/mysql`
+- CORRECT: `/mysql/index`
+
+## Formatting Mistakes
+
+### Code Blocks Without Language
+- WRONG: ``` SELECT * FROM users ```
+- CORRECT: ```sql SELECT * FROM users ```
+
+### Title Separator Without Content
+- WRONG: # Title then --- then ## Title2
+- CORRECT: # Title content ## Title2
+
+## Checklist
+- [ ] SQL syntax is correct
+- [ ] Links use absolute paths
+- [ ] Code blocks have language tags (sql, bash, etc.)
+- [ ] Run npm run build to verify

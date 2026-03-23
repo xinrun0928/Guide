@@ -1,0 +1,225 @@
+/**
+ * DBInsight 自定义主题样式
+ */
+
+/* ============================================
+   颜色变量 - 亮色主题
+   ============================================ */
+   :root {
+    /* 主色调 */
+    --vp-c-brand-1: #007acc;
+    --vp-c-brand-2: #005999;
+    --vp-c-brand-3: #00467a;
+    --vp-c-brand-soft: rgba(0, 122, 204, 0.12);
+  
+    /* 背景色 */
+    --vp-c-bg: #ffffff;
+    --vp-c-bg-soft: #f6f8fa;
+    --vp-c-bg-mute: #eaeef2;
+  
+    /* 文字颜色 */
+    --vp-c-text-1: #24292e;
+    --vp-c-text-2: #57606a;
+    --vp-c-text-3: #8b949e;
+  
+    /* 边框颜色 */
+    --vp-c-border: #d0d7de;
+    --vp-c-divider: #d8dee4;
+  
+    /* 代码块背景 */
+    --vp-code-block-bg: #f6f8fa;
+    --vp-code-bg: #e6ebf1;
+
+      /* 通过配置 自定义颜色 */
+    --vp-home-hero-name-color: transparent;
+    /* 主页标题文字的颜色  */
+    --vp-home-hero-name-background: -webkit-linear-gradient(120deg, rgb(244, 145, 15), #7eaadf);
+
+    /* 主页左侧背景添加渐变光圈 */
+    --vp-home-hero-image-background-image: linear-gradient(135deg, #ff9100 10%, #ffc400 50%);
+    --vp-home-hero-image-filter: blur(100px);
+
+    /* botton按钮 */
+    /* 按钮文本颜色 */
+    --vp-button-brand-text: #ffffff;
+    /* 按钮背景颜色 */
+    --vp-button-brand-bg: #ff9100;
+  }
+  
+  /* ============================================
+     颜色变量 - 暗色主题
+     ============================================ */
+  .dark {
+    --vp-c-brand-1: #58a6ff;
+    --vp-c-brand-2: #79c0ff;
+    --vp-c-brand-3: #a5d6ff;
+    --vp-c-brand-soft: rgba(88, 166, 255, 0.12);
+  
+    /* 背景色 */
+    --vp-c-bg: #0d1117;
+    --vp-c-bg-soft: #161b22;
+    --vp-c-bg-mute: #21262d;
+  
+    /* 文字颜色 */
+    --vp-c-text-1: #c9d1d9;
+    --vp-c-text-2: #8b949e;
+    --vp-c-text-3: #6e7681;
+  
+    /* 边框颜色 */
+    --vp-c-border: #30363d;
+    --vp-c-divider: #21262d;
+  
+    /* 代码块背景 */
+    --vp-code-block-bg: #161b22;
+    --vp-code-bg: #2d333b;
+  }
+  
+  /* ============================================
+     自定义样式
+     ============================================ */
+  
+  /* 首页 Hero 区域 */
+  .VPHome {
+    padding-bottom: 0;
+  }
+  
+  /* 自定义内容容器 */
+  .vp-doc h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    /* border-bottom: 1px solid var(--vp-c-divider); */
+    padding-bottom: 0.5rem;
+  }
+  
+  .vp-doc h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .vp-doc h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* 代码块样式优化 */
+  .vp-doc div[class*='language-'] {
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+  
+  .vp-doc div[class*='language-'] pre {
+    font-family: 'Fira Code', 'Source Code Pro', Consolas, monospace;
+  }
+  
+  /* 表格样式 */
+  .vp-doc table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+  }
+  
+  .vp-doc table th,
+  .vp-doc table td {
+    border: 1px solid var(--vp-c-border);
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+  
+  .vp-doc table th {
+    background: var(--vp-c-bg-soft);
+    font-weight: 600;
+  }
+  
+  .vp-doc table tr:hover {
+    background: var(--vp-c-bg-soft);
+  }
+  
+  /* 引用块样式 */
+  .vp-doc blockquote {
+    border-left: 4px solid var(--vp-c-brand-1);
+    background: var(--vp-c-bg-soft);
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  .vp-doc blockquote p {
+    margin: 0;
+    color: var(--vp-c-text-2);
+  }
+  
+  /* 链接样式 */
+  .vp-doc a {
+    color: var(--vp-c-brand-1);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .vp-doc a:hover {
+    color: var(--vp-c-brand-2);
+    text-decoration: underline;
+  }
+  
+  /* 自定义提示框 */
+  .vp-doc .custom-tip,
+  .vp-doc .custom-warning,
+  .vp-doc .custom-danger {
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+  
+  .vp-doc .custom-tip {
+    background: rgba(0, 122, 204, 0.1);
+    border-left: 4px solid var(--vp-c-brand-1);
+  }
+  
+  .vp-doc .custom-warning {
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+  }
+  
+  .vp-doc .custom-danger {
+    background: rgba(220, 53, 69, 0.1);
+    border-left: 4px solid #dc3545;
+  }
+  
+  /* 侧边栏样式优化 */
+  .VPSidebar {
+    padding: 1rem;
+  }
+  
+  .VPSidebarItem .text {
+    font-size: 0.9rem;
+  }
+  
+  /* 导航栏样式 */
+  .VPNav {
+    background: var(--vp-c-bg);
+    border-bottom: 1px solid var(--vp-c-border);
+  }
+  
+  /* 滚动条样式 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--vp-c-bg-soft);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--vp-c-border);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--vp-c-text-3);
+  }
+  
