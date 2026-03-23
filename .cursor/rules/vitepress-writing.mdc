@@ -534,6 +534,102 @@ synchronized 的核心是对象锁，通过 Mark Word 记录锁状态。
 
 ## 九、排版细节规范
 
+### frontmatter 头信息
+
+由 AI 生成的 md 文档**不需要**包含 frontmatter 头信息（`---`、`title`、`date` 等），保持纯 Markdown 内容即可。
+
+正确：
+
+```markdown
+# 标题
+
+正文内容...
+```
+
+错误（无需生成）：
+
+```markdown
+---
+title: 标题
+date: 2024-01-01
+---
+
+# 标题
+
+正文内容...
+```
+
+## 十、代码语言规范
+
+AI 生成的代码示例（代码块）**必须使用 Java 语言**，包括算法、数据结构、系统设计等所有技术主题的示例代码。
+
+正确：
+
+````markdown
+```java
+public int[] twoSum(int[] nums, int target) {
+    Map<Integer, Integer> map = new HashMap<>();
+    for (int i = 0; i < nums.length; i++) {
+        int complement = target - nums[i];
+        if (map.containsKey(complement)) {
+            return new int[]{map.get(complement), i};
+        }
+        map.put(nums[i], i);
+    }
+    return new int[]{};
+}
+```
+````
+
+错误（禁止出现 Python、C++ 等非 Java 代码）：
+
+````markdown
+```python
+def two_sum(nums, target):
+    ...
+```
+````
+
+## 十一、代码注释规范
+
+代码示例中，**关键逻辑处必须添加注释**，说明「为什么这样做」而非「做了什么」。注释应简洁明了，每段关键逻辑一处即可，不追求逐行注释。
+
+正确示例：
+
+```java
+public int findPeakElement(int[] nums) {
+    int left = 0, right = nums.length - 1;
+    while (left < right) {
+        int mid = left + ((right - left) >>> 1);
+        // 如果中间值大于右侧，说明峰值在左边（含中间）
+        if (nums[mid] > nums[mid + 1]) {
+            right = mid;
+        } else {
+            // 否则峰值在右边
+            left = mid + 1;
+        }
+    }
+    return left;
+}
+```
+
+错误示例（无注释或逐行废话注释）：
+
+```java
+public int findPeakElement(int[] nums) {
+    int left = 0, right = nums.length - 1;  // 初始化左右指针
+    while (left < right) {                   // 循环条件
+        int mid = left + ((right - left) >>> 1);  // 计算中点
+        // ...
+    }
+    return left;  // 返回结果
+}
+```
+
+> 核心原则：注释要解释**意图和 Trade-off**，不要解释代码本身在做什么。代码已经能说明「做什么」，注释要说「为什么这样做」和「注意什么坑」。
+
+> 特别说明：若文档主题涉及特定语言的对比（如「Go vs Java」），可在对比部分出现其他语言代码，其余正文必须以 Java 为主。
+
 ### 标题衔接
 
 VitePress 将 `---` 渲染为横线。标题之间若直接加 `---`，会显示两条横线。
