@@ -1,5 +1,5 @@
 ---
-description: VitePress documentation standards and link rules
+description: VitePress 文档技术规范 — 链接规则、文件结构、代码规范
 globs: docs/**/*.md
 alwaysApply: true
 ---
@@ -10,31 +10,36 @@ alwaysApply: true
 
 ### 绝对路径 vs 相对路径
 
-- 使用 `/mysql/xxx` 格式的绝对路径，而非相对路径
+- 使用 `/module/xxx` 格式的绝对路径，而非相对路径
 - 目录跳转使用 `/directory/index` 而非 `/directory`
 
 ### 跨模块链接格式
 
 ```markdown
 # 正确
-[MySQL 基础](/mysql/sql/basic/overview)
-[事务与锁](/mysql/transaction/index)
-[性能优化](/mysql/optimize/index)
+[Java 基础](/java/index)
+[MySQL 索引](/database/mysql/index)
+[Spring IoC](/framework/spring/index)
 
 # 错误
-[MySQL 基础](../mysql/sql/basic/overview)
-[MySQL 基础](./mysql/sql/basic/overview)
-[/mysql/sql/basic/overview]
+[Java 基础](../java/index)
+[Java 基础](./java/index)
+[/java/index]
 ```
 
 ### 导航栏对应模块链接
 
 | 导航项 | 链接格式 |
 |-----|-----|
-| MySQL 数据库 | `/mysql/xxx` |
-| MongoDB | `/mongodb/xxx` |
-| Redis | `/redis/xxx` |
-| PostgreSQL | `/postgresql/xxx` |
+| 面试准备 | `/interview/xxx` |
+| Java | `/java/xxx` |
+| 计算机基础 | `/cs/xxx` |
+| 数据库 | `/database/xxx` |
+| 常用框架 | `/framework/xxx` |
+| 分布式架构 | `/distributed/xxx` |
+| 高性能与高可用 | `/high-performance/xxx` |
+| 中间件 | `/middleware/xxx` |
+| 工程化与运维 | `/devops/xxx` |
 
 ## 代码规范
 
@@ -72,15 +77,6 @@ alwaysApply: true
 - 添加新 sidebar 时，同步更新 `docs/.vitepress/sidebar.js`
 - 创建对应的 sidebar 文件 `docs/.vitepress/sidebar/[module].js`
 
-## 常见错误避免
-
-1. **死链接**：VitePress 构建时会检查所有链接，确保目标文件存在
-2. **链接路径错误**：
-   - `../sql/function` → `/mysql/sql/function`
-   - `../../transaction/lock` → `/mysql/transaction/lock`
-3. **缺失 index.md**：链接到目录时必须确保目录有 index.md
-4. **泛型未转义**：`List<String>` → `List&lt;String&gt;`
-
 ## 新增文档检查清单
 
 - [ ] 文件放在正确的模块目录下
@@ -89,4 +85,3 @@ alwaysApply: true
 - [ ] Sidebar 已更新（如需要）
 - [ ] 代码中的泛型使用转义符
 - [ ] 运行 `npm run build` 验证无死链接
-
