@@ -239,9 +239,59 @@ export const javaSidebar = [
         text: 'Future 与异步编程',
         collapsed: false,
         items: [
-          { text: 'Callable、Future、FutureTask', link: '/java/concurrent/callable-future' },
-          { text: 'CompletableFuture 异步编排', link: '/java/concurrent/completable-future' },
+          {
+            text: 'Future 基础',
+            collapsed: false,
+            items: [
+              { text: 'Callable、Future、FutureTask 三者关系', link: '/java/concurrent/callable-future' },
+              { text: 'Future 局限性：get() 阻塞与无法链式调用', link: '/java/concurrent/future-limitation' },
+              { text: 'JDK Future 接口方法详解：get()、cancel()、isDone()', link: '/java/concurrent/future-method' },
+            ],
+          },
+          {
+            text: 'CompletableFuture 核心',
+            collapsed: false,
+            items: [
+              { text: 'CompletableFuture 优势：异步 + 链式编排', link: '/java/concurrent/completable-future' },
+              { text: 'CompletableFuture 创建方式：supplyAsync / runAsync / completedFuture', link: '/java/concurrent/cf-create' },
+              { text: 'CompletableFuture 默认线程池：ForkJoinPool.commonPool()', link: '/java/concurrent/cf-default-executor' },
+              { text: 'CompletableFuture 常用方法速查表', link: '/java/concurrent/cf-method-cheatsheet' },
+            ],
+          },
+          {
+            text: 'CompletableFuture 依赖链',
+            collapsed: false,
+            items: [
+              { text: 'thenApply / thenApplyAsync：同步与异步转换', link: '/java/concurrent/cf-then-apply' },
+              { text: 'thenAccept / thenRun：消费结果与最终动作', link: '/java/concurrent/cf-then-accept' },
+              { text: 'thenCompose：扁平化链式调用（类似 flatMap）', link: '/java/concurrent/cf-then-compose' },
+              { text: 'thenCombine / thenAcceptBoth：合并两个 CompletableFuture', link: '/java/concurrent/cf-then-combine' },
+              { text: 'allOf / anyOf：批量等待与最先完成', link: '/java/concurrent/cf-allof-anyof' },
+            ],
+          },
+          {
+            text: 'CompletableFuture 异常处理',
+            collapsed: false,
+            items: [
+              { text: 'exceptionally：异常时返回默认值', link: '/java/concurrent/cf-exceptionally' },
+              { text: 'whenComplete：无论成功失败都执行回调', link: '/java/concurrent/cf-when-complete' },
+              { text: 'handle：携带异常信息的统一处理', link: '/java/concurrent/cf-handle' },
+              { text: 'unchecked 异常与CancellationException 处理', link: '/java/concurrent/cf-exception' },
+            ],
+          },
+          {
+            text: 'CompletableFuture 实战',
+            collapsed: false,
+            items: [
+              { text: '多服务并行调用：thenCompose 链式编排实战', link: '/java/concurrent/cf-parallel-call' },
+              { text: 'allOf 聚合多路查询结果并处理异常', link: '/java/concurrent/cf-allof-practice' },
+              { text: 'anyOf 实现超时降级与快速失败', link: '/java/concurrent/cf-timeout-fallback' },
+              { text: 'CompletableFuture vs ParallelStream vs 响应式编程对比', link: '/java/concurrent/cf-vs-parallel-stream' },
+              { text: 'CompletableFuture 性能调优：自定义线程池', link: '/java/concurrent/cf-performance' },
+            ],
+          },
           { text: '并行流 ParallelStream 原理', link: '/java/concurrent/parallel-stream' },
+          { text: 'Java 异步编程模式总结：Callback / Future / CompletableFuture / 响应式', link: '/java/concurrent/async-pattern' },
         ],
       },
       { text: 'ThreadLocal 原理与内存泄漏', link: '/java/concurrent/threadlocal' },

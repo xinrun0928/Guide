@@ -195,4 +195,85 @@ export const distributedSidebar = [
       { text: 'RESTful vs RPC vs gRPC 对比', link: '/distributed/grpc/rest-rpc' },
     ],
   },
+  {
+    text: '典型分布式场景方案',
+    collapsed: false,
+    items: [
+      {
+        text: '统一认证与 SSO',
+        collapsed: false,
+        items: [
+          { text: '微服务统一认证方案：Session 共享 vs Token 方案', link: '/distributed/scenario/unified-auth' },
+          { text: 'CAS 单点登录原理与流程', link: '/distributed/scenario/cas-sso' },
+          { text: 'OAuth 2.0 在微服务中的使用：授权服务与资源服务分离', link: '/distributed/scenario/oauth2-microservice' },
+          { text: '分布式 Session：Spring Session + Redis 方案', link: '/distributed/scenario/distributed-session' },
+          { text: '无状态 Token 方案：JWT 生成、刷新、注销与黑名单', link: '/distributed/scenario/jwt-stateless' },
+        ],
+      },
+      {
+        text: '多级缓存架构',
+        collapsed: false,
+        items: [
+          { text: '多级缓存模式：本地缓存（Caffeine/Guava）→ 分布式缓存（Redis）→ 数据库', link: '/distributed/scenario/multi-level-cache' },
+          { text: '缓存与数据库双写一致性：Cache Aside、Read Through、Write Through、Write Behind', link: '/distributed/scenario/cache-db-consistency' },
+          { text: '缓存穿透：布隆过滤器 + 空值缓存方案', link: '/distributed/scenario/cache-penetration' },
+          { text: '缓存击穿：互斥锁 + 逻辑过期双检方案', link: '/distributed/scenario/cache-breakdown' },
+          { text: '缓存雪崩：过期时间打散 + 熔断降级方案', link: '/distributed/scenario/cache-avalanche' },
+          { text: '热点数据探测与自动扩容', link: '/distributed/scenario/hot-data-detection' },
+        ],
+      },
+      {
+        text: '分布式文件与对象存储',
+        collapsed: false,
+        items: [
+          { text: 'MinIO 分布式对象存储架构与 S3 兼容', link: '/distributed/scenario/minio' },
+          { text: 'FastDFS 分布式文件系统原理', link: '/distributed/scenario/fastdfs' },
+          { text: '文件分片上传与断点续传实现', link: '/distributed/scenario/file-sharding' },
+          { text: 'CDN + OSS 分发加速架构设计', link: '/distributed/scenario/cdn-oss' },
+        ],
+      },
+      {
+        text: '多机房与数据同步',
+        collapsed: false,
+        items: [
+          { text: '同城双活架构设计：流量分配与数据同步', link: '/distributed/scenario/active-active' },
+          { text: '异地多活架构：单元化部署与数据同步方案', link: '/distributed/scenario/multi-region' },
+          { text: '跨机房数据同步方案：MySQL binlog + Canal + Kafka', link: '/distributed/scenario/cross-datacenter-sync' },
+          { text: '全局递增 ID 在分库分表中的实现', link: '/distributed/scenario/sharding-id' },
+        ],
+      },
+      {
+        text: '流量控制与弹性策略',
+        collapsed: false,
+        items: [
+          { text: '全链路限流：网关层 → 应用层 → 资源层限流方案', link: '/distributed/scenario/full-link-rate-limit' },
+          { text: '接口流量削峰：消息队列 + 令牌桶 / 漏桶算法', link: '/distributed/scenario/peak-shaving' },
+          { text: '服务弹性降级：核心链路识别与降级策略', link: '/distributed/scenario/elastic-degradation' },
+          { text: '超时重试风暴治理：重试策略与熔断降级组合', link: '/distributed/scenario/retry-storm' },
+          { text: '系统自适应限流：Sentinel 与 Prometheus 联动', link: '/distributed/scenario/self-adaptive-limit' },
+        ],
+      },
+      {
+        text: '数据处理与批任务',
+        collapsed: false,
+        items: [
+          { text: '分布式批量任务框架设计：分片任务与结果聚合', link: '/distributed/scenario/batch-task' },
+          { text: '数据同步任务：全量同步与增量同步方案', link: '/distributed/scenario/data-sync-task' },
+          { text: '分布式唯一任务执行：乐观锁 + 分布式锁双保险', link: '/distributed/scenario/unique-task' },
+          { text: '定时任务的分布式化：广播模式与分片模式', link: '/distributed/scenario/distributed-cron' },
+        ],
+      },
+      {
+        text: '统一异常与日志',
+        collapsed: false,
+        items: [
+          { text: '微服务统一异常处理：全局异常码 + 标准化响应体', link: '/distributed/scenario/unified-exception' },
+          { text: '分布式日志追踪：TraceId + SpanId 全链路串联', link: '/distributed/scenario/distributed-trace' },
+          { text: '日志聚合方案：ELK + Kafka 分流架构', link: '/distributed/scenario/log-aggregation' },
+          { text: '业务链路黑白盒监控：Metrics + Tracing + Logging', link: '/distributed/scenario/observability' },
+        ],
+      },
+      { text: '分布式场景面试高频问题汇总', link: '/distributed/scenario/interview-summary' },
+    ],
+  },
 ]

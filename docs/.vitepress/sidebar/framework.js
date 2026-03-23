@@ -207,4 +207,185 @@ export const frameworkSidebar = [
       { text: 'Spring JDBC Template 使用', link: '/framework/orm/jdbc-template' },
     ],
   },
+  {
+    text: 'Spring Cloud 全家桶',
+    collapsed: false,
+    items: [
+      {
+        text: 'Spring Cloud 基础',
+        collapsed: false,
+        items: [
+          { text: 'Spring Cloud 版本命名与组件选型策略', link: '/framework/springcloud/version' },
+          { text: 'Spring Cloud 与 Spring Boot 版本对应关系', link: '/framework/springcloud/boot-version' },
+          { text: '微服务架构落地：Spring Cloud 全家桶组件总览', link: '/framework/springcloud/overview' },
+          { text: 'Spring Cloud Alibaba vs Spring Cloud Netflix 对比', link: '/framework/springcloud/alibaba-vs-netflix' },
+        ],
+      },
+      {
+        text: '服务注册与配置',
+        collapsed: false,
+        items: [
+          { text: 'Nacos 服务注册与发现', link: '/framework/springcloud/nacos-discovery' },
+          { text: 'Nacos 配置中心：命名空间、Group、Data ID 三层隔离', link: '/framework/springcloud/nacos-config' },
+          { text: 'Nacos 热更新：@RefreshScope 与配置动态刷新', link: '/framework/springcloud/nacos-refresh' },
+          { text: 'Nacos 集群与持久化', link: '/framework/springcloud/nacos-cluster' },
+        ],
+      },
+      {
+        text: '服务调用与网关',
+        collapsed: false,
+        items: [
+          { text: 'OpenFeign 声明式 HTTP 客户端：@FeignClient 与负载均衡', link: '/framework/springcloud/openfeign' },
+          { text: 'Feign 传参与继承特性', link: '/framework/springcloud/feign-advanced' },
+          { text: 'Gateway 路由配置：Predicates 与 Filters', link: '/framework/springcloud/gateway-route' },
+          { text: 'Gateway 过滤器：GlobalFilter 与 GatewayFilter 链', link: '/framework/springcloud/gateway-filter' },
+          { text: 'Gateway 限流：RequestRateLimiter 与 Redis', link: '/framework/springcloud/gateway-rate-limit' },
+          { text: 'Gateway 熔断降级：Spring Cloud CircuitBreaker 集成', link: '/framework/springcloud/gateway-circuit-breaker' },
+        ],
+      },
+      {
+        text: '服务容错与治理',
+        collapsed: false,
+        items: [
+          { text: 'Sentinel 流量控制与熔断降级', link: '/framework/springcloud/sentinel-flow' },
+          { text: 'Sentinel @SentinelResource 与热点参数限流', link: '/framework/springcloud/sentinel-resource' },
+          { text: 'Sentinel 规则持久化：推模式与拉模式', link: '/framework/springcloud/sentinel-persist' },
+          { text: 'Sentinel 与 Hystrix 对比', link: '/framework/springcloud/sentinel-vs-hystrix' },
+          { text: 'Sleuth 链路追踪与 Zipkin 可视化', link: '/framework/springcloud/sleuth-zipkin' },
+        ],
+      },
+      {
+        text: '消息与异步',
+        collapsed: false,
+        items: [
+          { text: 'Spring Cloud Stream 屏蔽 MQ 底层差异', link: '/framework/springcloud/stream' },
+          { text: 'Spring Cloud Bus 消息总线与配置刷新', link: '/framework/springcloud/bus' },
+          { text: 'Spring Cloud Bus + Nacos 实现配置自动刷新', link: '/framework/springcloud/bus-nacos' },
+        ],
+      },
+      {
+        text: '微服务实战',
+        collapsed: false,
+        items: [
+          { text: 'Spring Cloud 分布式事务：Seata AT 模式集成', link: '/framework/springcloud/seata' },
+          { text: 'Spring Cloud 统一认证：Spring Security + OAuth2 + JWT', link: '/framework/springcloud/oauth2-jwt' },
+          { text: 'Spring Cloud 多环境配置：Bootstrap + Nacos Namespace', link: '/framework/springcloud/multi-env' },
+          { text: 'Spring Cloud 面试高频问题汇总', link: '/framework/springcloud/interview-summary' },
+        ],
+      },
+    ],
+  },
+  {
+    text: 'Spring Security',
+    collapsed: false,
+    items: [
+      {
+        text: 'Security 核心概念',
+        collapsed: false,
+        items: [
+          { text: 'Spring Security 认证与授权核心流程', link: '/framework/springsecurity/core-flow' },
+          { text: 'Spring Security 过滤器链：SecurityFilterChain 与 FilterChainProxy', link: '/framework/springsecurity/filter-chain' },
+          { text: 'WebSecurityConfigurerAdapter 配置方式演进（JDK 5 → 6）', link: '/framework/springsecurity/config-adapter' },
+          { text: 'UserDetailsService 与自定义登录认证', link: '/framework/springsecurity/userdetails' },
+          { text: 'PasswordEncoder：BCrypt 密码加密与盐值', link: '/framework/springsecurity/password-encoder' },
+        ],
+      },
+      {
+        text: '认证机制',
+        collapsed: false,
+        items: [
+          { text: '表单登录：UsernamePasswordAuthenticationFilter 流程', link: '/framework/springsecurity/form-login' },
+          { text: 'Session 会话管理：超时处理与并发控制', link: '/framework/springsecurity/session' },
+          { text: 'Remember-Me 功能：Token 持久化与安全', link: '/framework/springsecurity/remember-me' },
+          { text: '短信验证码登录：AuthenticationProvider 自定义扩展', link: '/framework/springsecurity/sms-login' },
+          { text: 'OAuth2 登录：QQ、微信、GitHub 第三方登录集成', link: '/framework/springsecurity/oauth2-login' },
+          { text: 'CAS 单点登录集成', link: '/framework/springsecurity/cas' },
+        ],
+      },
+      {
+        text: '授权与权限',
+        collapsed: false,
+        items: [
+          { text: 'Spring Security 授权模型：Authority 与 Role', link: '/framework/springsecurity/authority-role' },
+          { text: '@PreAuthorize 与 @Secured 注解权限控制', link: '/framework/springsecurity/preauthorize' },
+          { text: '方法级别安全：@EnableMethodSecurity 与 SpEL 表达式', link: '/framework/springsecurity/method-security' },
+          { text: '动态权限决策：投票器（Voter）与 AccessDecisionManager', link: '/framework/springsecurity/access-decision' },
+          { text: 'RBAC 权限模型与数据表设计', link: '/framework/springsecurity/rbac' },
+          { text: '接口权限数据模型：用户-角色-权限树状结构', link: '/framework/springsecurity/permission-model' },
+        ],
+      },
+      {
+        text: 'JWT 与无状态认证',
+        collapsed: false,
+        items: [
+          { text: 'JWT 生成与验证：jjwt 库使用', link: '/framework/springsecurity/jwt' },
+          { text: 'JWT 无状态认证流程设计：过滤器链集成', link: '/framework/springsecurity/jwt-filter' },
+          { text: 'JWT 刷新机制与黑名单注销', link: '/framework/springsecurity/jwt-refresh' },
+          { text: 'Token 防盗用：设备指纹 + IP 绑定', link: '/framework/springsecurity/jwt-security' },
+        ],
+      },
+      {
+        text: 'Security 高级特性',
+        collapsed: false,
+        items: [
+          { text: 'CSRF 防护机制与 Token 校验', link: '/framework/springsecurity/csrf' },
+          { text: 'CORS 跨域与 Security 配置', link: '/framework/springsecurity/cors' },
+          { text: 'XSS 防护：Filter 与 HttpFirewall', link: '/framework/springsecurity/xss' },
+          { text: 'Security 与微服务：Gateway 统一鉴权中心', link: '/framework/springsecurity/gateway-auth' },
+          { text: 'Spring Security 6.x 新特性与重大变更', link: '/framework/springsecurity/v6' },
+          { text: 'Spring Security 面试高频问题汇总', link: '/framework/springsecurity/interview-summary' },
+        ],
+      },
+    ],
+  },
+  {
+    text: 'Shiro',
+    collapsed: false,
+    items: [
+      {
+        text: 'Shiro 核心概念',
+        collapsed: false,
+        items: [
+          { text: 'Shiro 架构：Subject、SecurityManager、Realms 三大组件', link: '/framework/shiro/architecture' },
+          { text: 'Shiro 与 Spring Security 对比', link: '/framework/shiro/vs-spring-security' },
+          { text: 'Shiro 认证流程：login() → SecurityUtils.getSubject()', link: '/framework/shiro/authentication' },
+          { text: 'Shiro 授权流程：isPermitted() 与 Permissions', link: '/framework/shiro/authorization' },
+        ],
+      },
+      {
+        text: 'Shiro 认证机制',
+        collapsed: false,
+        items: [
+          { text: 'IniRealm 与 properties 方式配置用户权限', link: '/framework/shiro/ini-realm' },
+          { text: 'JDBCRealm 连接数据库实现认证授权', link: '/framework/shiro/jdbc-realm' },
+          { text: '自定义 Realm：继承 AuthorizingRealm 实现doGetAuthenticationInfo', link: '/framework/shiro/custom-realm' },
+          { text: 'Shiro 密码加密：HashedCredentialsMatcher 与盐值', link: '/framework/shiro/credentials-matcher' },
+          { text: 'Shiro Session 管理：SessionManager 与 SessionDAO', link: '/framework/shiro/session' },
+          { text: 'Shiro RememberMe 功能', link: '/framework/shiro/remember-me' },
+        ],
+      },
+      {
+        text: 'Shiro 与 Spring Boot 集成',
+        collapsed: false,
+        items: [
+          { text: 'Shiro + Spring Boot 快速集成：ShiroFilterFactoryBean', link: '/framework/shiro/springboot' },
+          { text: 'Shiro 过滤器链：anon、authc、roles、perms、logout', link: '/framework/shiro/filter-chain' },
+          { text: ' Shiro 注解：@RequiresAuthentication / @RequiresRoles / @RequiresPermissions', link: '/framework/shiro/annotation' },
+          { text: 'Shiro JSP 标签库：\<shiro:principal\> 与 \<shiro:hasRole\>', link: '/framework/shiro/jsp-tag' },
+          { text: 'Shiro 缓存：EhCache / Redis + CacheManager', link: '/framework/shiro/cache' },
+          { text: 'Shiro  session + Redis 分布式会话共享', link: '/framework/shiro/session-redis' },
+        ],
+      },
+      {
+        text: 'Shiro 实战与安全',
+        collapsed: false,
+        items: [
+          { text: 'Shiro 实现 JWT 无状态认证', link: '/framework/shiro/jwt' },
+          { text: 'Shiro 权限数据模型：用户-角色-权限树状结构设计', link: '/framework/shiro/permission-model' },
+          { text: 'Shiro CSRF 防护与 URL 过滤策略', link: '/framework/shiro/csrf' },
+          { text: 'Shiro 面试高频问题汇总', link: '/framework/shiro/interview-summary' },
+        ],
+      },
+    ],
+  },
 ]
