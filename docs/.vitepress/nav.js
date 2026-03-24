@@ -95,9 +95,9 @@ export const nav = [
     activeMatch: '/devops/',
     items: [
       { text: '📦 Docker', link: '/devops/docker/index' },
-      { text: '☸️ Kubernetes（K8s）', link: '/devops/kubernetes/index' },
-      { text: '📜 Helm', link: '/devops/helm/index' },
-      { text: '☁️ 云原生生态', link: '/devops/cloudnative/index' },
+      { text: '☸️ Kubernetes（K8s）', link: '/devops/k8s/index' },
+      { text: '📜 Helm', link: '/devops/k8s/helm/index' },
+      { text: '☁️ 云原生生态', link: '/devops/k8s/cloud-native/index' },
       { text: '🔁 CI/CD', link: '/devops/cicd/index' },
       { text: '⚖️ 容器编排对比', link: '/devops/orchestration/index' },
       { text: '🤖 自动化运维', link: '/devops/automation/index' },
