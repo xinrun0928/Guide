@@ -13,11 +13,11 @@ ZooKeeper、etcd、Nacos，是三个最主流的解决方案。
 
 分布式协调服务分为三个部分：ZooKeeper、etcd、Nacos。
 
-|| 章节 | 篇数 | 核心内容 |
-||------|------|----------|
-|| [ZooKeeper](/distributed/zookeeper/data-model) | 8 篇 | 数据模型、Watch、Session、Leader 选举、ACL、应用场景 |
-|| [etcd](/distributed/etcd/architecture) | 3 篇 | 架构原理、Raft + MVCC、Kubernetes 应用 |
-|| [Nacos](/distributed/nacos/architecture) | 5 篇 | 注册中心、配置中心、集群部署、临时/持久实例 |
+| 章节 | 篇数 | 核心内容 |
+|------|------|----------|
+| [ZooKeeper](/distributed/zookeeper/data-model) | 8 篇 | 数据模型、Watch、Session、Leader 选举、ACL、应用场景 |
+| [etcd](/distributed/etcd/architecture) | 3 篇 | 架构原理、Raft + MVCC、Kubernetes 应用 |
+| [Nacos](/distributed/nacos/architecture) | 5 篇 | 注册中心、配置中心、集群部署、临时/持久实例 |
 
 
 ## 三者对比

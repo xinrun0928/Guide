@@ -13,11 +13,11 @@
 
 分布式锁是分布式系统中最重要的基础设施之一。
 
-|| 章节 | 篇数 | 核心内容 |
-||------|------|----------|
-|| [分布式锁基础](/distributed/lock/requirements) | 1 篇 | 五大要求：互斥、可重入、不死锁、公平性、高性能 |
-|| [Redis 分布式锁](/distributed/lock/redis-lock) | 8 篇 | SETNX、Redisson、看门狗、公平锁、读写锁、联锁 |
-|| [其他实现方案](/distributed/lock/mysql-lock) | 3 篇 | MySQL 唯一索引、ZooKeeper 临时顺序节点、对比选型 |
+| 章节 | 篇数 | 核心内容 |
+|------|------|----------|
+| [分布式锁基础](/distributed/lock/requirements) | 1 篇 | 五大要求：互斥、可重入、不死锁、公平性、高性能 |
+| [Redis 分布式锁](/distributed/lock/redis-lock) | 8 篇 | SETNX、Redisson、看门狗、公平锁、读写锁、联锁 |
+| [其他实现方案](/distributed/lock/mysql-lock) | 3 篇 | MySQL 唯一索引、ZooKeeper 临时顺序节点、对比选型 |
 
 
 ## 五大要求

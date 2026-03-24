@@ -11,15 +11,15 @@
 
 典型场景方案分为六大类：
 
-|| 章节 | 篇数 | 核心内容 |
-||------|------|----------|
-|| [统一认证与 SSO](/distributed/scenario/unified-auth/index) | 5 篇 | Session 共享、Token、JWT、CAS、OAuth2 |
-|| [多级缓存架构](/distributed/scenario/multi-level-cache/index) | 6 篇 | 本地缓存、Redis、穿透/击穿/雪崩、热点数据 |
-|| [分布式文件存储](/distributed/scenario/file-storage/index) | 4 篇 | MinIO、FastDFS、分片上传、CDN |
-|| [多机房与数据同步](/distributed/scenario/multi-datacenter/index) | 4 篇 | 同城双活、异地多活、binlog 同步 |
-|| [流量控制与弹性策略](/distributed/scenario/flow-control/index) | 5 篇 | 全链路限流、削峰、降级、重试风暴 |
-|| [数据处理与批任务](/distributed/scenario/batch-task/index) | 4 篇 | 分片任务、数据同步、唯一执行、定时任务 |
-|| [统一异常与日志](/distributed/scenario/unified-logging/index) | 4 篇 | 全局异常、链路追踪、日志聚合、可观测性 |
+| 章节 | 篇数 | 核心内容 |
+|------|------|----------|
+| [统一认证与 SSO](/distributed/scenario/unified-auth/index) | 5 篇 | Session 共享、Token、JWT、CAS、OAuth2 |
+| [多级缓存架构](/distributed/scenario/multi-level-cache/index) | 6 篇 | 本地缓存、Redis、穿透/击穿/雪崩、热点数据 |
+| [分布式文件存储](/distributed/scenario/file-storage/index) | 4 篇 | MinIO、FastDFS、分片上传、CDN |
+| [多机房与数据同步](/distributed/scenario/multi-datacenter/index) | 4 篇 | 同城双活、异地多活、binlog 同步 |
+| [流量控制与弹性策略](/distributed/scenario/flow-control/index) | 5 篇 | 全链路限流、削峰、降级、重试风暴 |
+| [数据处理与批任务](/distributed/scenario/batch-task/index) | 4 篇 | 分片任务、数据同步、唯一执行、定时任务 |
+| [统一异常与日志](/distributed/scenario/unified-logging/index) | 4 篇 | 全局异常、链路追踪、日志聚合、可观测性 |
 
 
 ## 场景与方案对照

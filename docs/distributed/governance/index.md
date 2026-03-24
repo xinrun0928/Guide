@@ -13,10 +13,10 @@
 
 服务治理分为两大类：基础设施治理和安全保障。
 
-|| 章节 | 篇数 | 核心内容 |
-||------|------|----------|
-|| [服务发现与负载均衡](/distributed/governance/service-discovery) | 4 篇 | 服务发现、负载均衡策略、客户端 vs 服务端 |
-|| [容错与保护](/distributed/governance/circuit-breaker) | 7 篇 | 熔断、降级、限流、超时、重试、幂等、安全 |
+| 章节 | 篇数 | 核心内容 |
+|------|------|----------|
+| [服务发现与负载均衡](/distributed/governance/service-discovery) | 4 篇 | 服务发现、负载均衡策略、客户端 vs 服务端 |
+| [容错与保护](/distributed/governance/circuit-breaker) | 7 篇 | 熔断、降级、限流、超时、重试、幂等、安全 |
 
 
 ## 治理全景图

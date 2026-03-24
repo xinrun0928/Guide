@@ -11,10 +11,10 @@
 
 分布式事务的解决方案分为两大类：强一致性方案和最终一致性方案。
 
-|| 章节 | 篇数 | 核心内容 |
-||------|------|----------|
-|| [解决方案总览](/distributed/transaction/solution-overview) | 7 篇 | AT、TCC、SAGA、可靠消息、最大努力通知、方案对比 |
-|| [原理深度剖析](/distributed/transaction/xa) | 7 篇 | XA 规范、Seata 架构、全局事务、TCC 问题 |
+| 章节 | 篇数 | 核心内容 |
+|------|------|----------|
+| [解决方案总览](/distributed/transaction/solution-overview) | 7 篇 | AT、TCC、SAGA、可靠消息、最大努力通知、方案对比 |
+| [原理深度剖析](/distributed/transaction/seata-architecture) | 7 篇 | XA 规范、Seata 架构、全局事务、TCC 问题 |
 
 
 ## 方案对比
