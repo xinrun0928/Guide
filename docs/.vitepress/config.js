@@ -136,7 +136,28 @@ export default defineConfig({
 
     // Markdown 扩展配置，可添加自定义插件
     config: (md) => {
-      // 添加自定义 markdown 扩展
+      // VitePress 会把 Markdown 渲染结果继续交给 Vue 编译。
+      // 但很多文章里会出现 `{{ ... }}`（如 Helm/Go template），Vue 会误把它当成插值语法并在构建时报错。
+      // 这里把 `{{` / `}}` 预先转义为 HTML 实体，避免 Vue 在解析阶段触发插值。
+      const escapeVueMustache = (s) =>
+        s
+          .replace(/{{/g, '&#123;&#123;')
+          .replace(/}}/g, '&#125;&#125;')
+
+      const visitToken = (token) => {
+        if (!token) return
+        if (typeof token.content === 'string') {
+          token.content = escapeVueMustache(token.content)
+        }
+        if (Array.isArray(token.children)) {
+          for (const child of token.children) visitToken(child)
+        }
+      }
+
+      md.core.ruler.push('escape_vue_mustache', (state) => {
+        if (!state || !Array.isArray(state.tokens)) return
+        for (const token of state.tokens) visitToken(token)
+      })
     },
   },
 

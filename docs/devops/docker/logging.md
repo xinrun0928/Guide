@@ -17,7 +17,7 @@ Docker 使用日志驱动（Logging Driver）来收集容器日志。默认是 `
 docker info | grep "Logging Driver"
 
 # 查看容器使用的日志驱动
-docker inspect -f '{{.HostConfig.LogConfig.Type}}' container_name
+docker inspect -f '&#123;&#123;.HostConfig.LogConfig.Type&#125;&#125;' container_name
 ```
 
 ### 常用日志驱动
@@ -220,7 +220,7 @@ docker run -d \
     --log-driver=gelf \
     --log-opt gelf-address=udp://graylog:12201 \
     --log-opt gelf-compression-type=gzip \
-    --log-opt tag="{{.Name}}/{{.ID}}" \
+    --log-opt tag="&#123;&#123;.Name&#125;&#125;/&#123;&#123;.ID&#125;&#125;" \
     --name myapp \
     nginx:alpine
 ```
@@ -232,7 +232,7 @@ docker run -d \
 | `gelf-address` | Graylog 地址 | `udp://graylog:12201` |
 | `gelf-compression-type` | 压缩类型 | `gzip`, `none` |
 | `gelf-compression-level` | 压缩级别 | `1-9` |
-| `tag` | 日志标签模板 | `{{.Name}}/{{.ID}}` |
+| `tag` | 日志标签模板 | `&#123;&#123;.Name&#125;&#125;/&#123;&#123;.ID&#125;&#125;` |
 
 ## Fluentd 驱动
 

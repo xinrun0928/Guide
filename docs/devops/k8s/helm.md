@@ -43,7 +43,7 @@ helm install my-app ./chart -f values-prod.yaml
 Helm 面试通常考察以下方面：
 
 1. **概念理解**：Chart、Repository、Release 的关系是什么？Helm 3 和 Helm 2 最大的区别是什么？
-2. **模板语法**：如何在模板中使用条件判断、循环、函数？`{{ .Values.xxx }}` 的点号表示什么？
+2. **模板语法**：如何在模板中使用条件判断、循环、函数？`&#123;&#123; .Values.xxx &#125;&#125;` 的点号表示什么？
 3. **进阶用法**：Helm Hook 可以用来做什么？Helmfile 如何管理多环境？
 4. **GitOps 结合**：Helm 如何与 ArgoCD 集成实现声明式部署？
 
