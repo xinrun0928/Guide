@@ -252,7 +252,7 @@ docker run -d \
 
 ### fluentd source 配置
 
-```xml
+```text
 <source>
   @type forward
   port 24224
@@ -307,7 +307,7 @@ public void processRequest(Request request) {
 
 ### Fluentd 解析 JSON 日志
 
-```xml
+```text
 <filter docker.**>
   @type parser
   key_name log
