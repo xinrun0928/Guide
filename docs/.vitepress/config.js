@@ -126,6 +126,14 @@ export default defineConfig({
     },
     lineNumbers: true,         // 是否在代码块显示行号
 
+    // Shiki 未内置的 fence 语言名：映射到已有语法，避免回退为 txt 并消除构建警告
+    // @see https://vitepress.dev/zh/guide/markdown#markdown-options
+    languageAlias: {
+      jinja2: 'jinja',   // Ansible 模板等（Shiki 语言 id 为 jinja）
+      promql: 'sql',     // PromQL 无独立 grammar，用类查询高亮近似展示
+      conf: 'ruby',      // Logstash 等 DSL 与 Ruby 块语法较接近
+    },
+
     // Markdown 扩展配置，可添加自定义插件
     config: (md) => {
       // 添加自定义 markdown 扩展
