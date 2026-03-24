@@ -16,6 +16,7 @@
 | [计算机网络](/cs/network/index) | TCP/UDP 协议、HTTP/HTTPS、DNS、I/O 多路复用 |
 | [操作系统](/cs/os/index) | 进程与线程、内存管理、文件系统、Linux 性能分析 |
 | [设计模式](/cs/design-pattern/index) | 创建型/结构型/行为型模式、源码中的应用、最佳实践 |
+| [网络安全](/cs/security/index) | 密码学基础、Web 安全、网络安全协议、安全运维与渗透测试 |
 
 ## 学习路径建议
 
