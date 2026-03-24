@@ -88,6 +88,7 @@ export const nav = [
       { text: '🏷️ Nacos', link: '/middleware/nacos/index' },
       { text: '🚦 Sentinel', link: '/middleware/sentinel/index' },
       { text: '🧩 ShardingSphere', link: '/middleware/shardingsphere/index' },
+      { text: '⚙️ 工作流引擎', link: '/middleware/workflow/index' },
     ],
   },
   {
@@ -99,7 +100,8 @@ export const nav = [
       { text: '📜 Helm', link: '/devops/k8s/helm/index' },
       { text: '☁️ 云原生生态', link: '/devops/k8s/cloud-native/index' },
       { text: '🔁 CI/CD', link: '/devops/cicd/index' },
-      { text: '⚖️ 容器编排对比', link: '/devops/orchestration/index' },
+      { text: '⚙️ 容器编排对比', link: '/devops/orchestration/index' },
+      { text: '🔨 构建工具（Maven/Gradle）', link: '/devops/build-tool/index' },
       { text: '🤖 自动化运维', link: '/devops/automation/index' },
       { text: '🌐 KubeSphere', link: '/devops/kubesphere/index' },
       { text: '🏗️ 基础设施即代码（IaC）', link: '/devops/iac/index' },

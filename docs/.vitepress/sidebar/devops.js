@@ -158,6 +158,64 @@ export const devopsSidebar = [
     ],
   },
   {
+    text: '构建工具',
+    collapsed: false,
+    items: [
+      {
+        text: '构建工具基础',
+        collapsed: false,
+        items: [
+          { text: '构建工具发展历程：Ant → Maven → Gradle', link: '/devops/build-tool/history' },
+          { text: 'Maven vs Gradle：核心差异与选型建议', link: '/devops/build-tool/maven-vs-gradle' },
+        ],
+      },
+      {
+        text: 'Maven',
+        collapsed: false,
+        items: [
+          { text: 'Maven 核心概念：坐标（GroupId、ArtifactId、Version）、仓库（Local、Remote、Central）', link: '/devops/build-tool/maven-concept' },
+          { text: 'Maven 依赖传递与依赖冲突解决：依赖调解（就近原则）与 exclusions 排除', link: '/devops/build-tool/maven-dependency' },
+          { text: 'Maven 依赖作用域（Scope）：compile、provided、runtime、test、system', link: '/devops/build-tool/maven-scope' },
+          { text: 'Maven 生命周期：clean、default、site 三套生命周期与阶段（Phase）', link: '/devops/build-tool/maven-lifecycle' },
+          { text: 'Maven 插件机制：插件目标（Goal）与绑定到生命周期阶段', link: '/devops/build-tool/maven-plugin' },
+          { text: 'Maven pom.xml 核心配置：dependencies、dependencyManagement、build、profiles', link: '/devops/build-tool/maven-pom' },
+          { text: 'Maven 多模块项目聚合（父 POM）与依赖管理（dependencyManagement）', link: '/devops/build-tool/maven-multi-module' },
+          { text: 'Maven 仓库配置：私有仓库 Nexus/Artifactory 搭建与镜像加速', link: '/devops/build-tool/maven-repository' },
+          { text: 'Maven BOM（Bill of Materials）：统一管理依赖版本', link: '/devops/build-tool/maven-bom' },
+          { text: 'Maven 常用命令：mvn install、package、deploy、dependency:tree、dependency:analyze', link: '/devops/build-tool/maven-command' },
+          { text: 'Maven 构建性能优化：并行构建、增量构建、本地仓库缓存', link: '/devops/build-tool/maven-performance' },
+        ],
+      },
+      {
+        text: 'Gradle',
+        collapsed: false,
+        items: [
+          { text: 'Gradle 核心优势：DSL 语法、Groovy/Kotlin 脚本、增量构建', link: '/devops/build-tool/gradle-concept' },
+          { text: 'Gradle 构建脚本：Project 与 Task 概念、任务依赖链', link: '/devops/build-tool/gradle-script' },
+          { text: 'Gradle 依赖管理：configurations、dependencies、API vs Implementation 隔离', link: '/devops/build-tool/gradle-dependency' },
+          { text: 'Gradle DSL：build.gradle（Groovy DSL）与 build.gradle.kts（Kotlin DSL）', link: '/devops/build-tool/gradle-dsl' },
+          { text: 'Gradle 增量构建与任务缓存：输入输出配置、构建缓存（Build Cache）', link: '/devops/build-tool/gradle-incremental' },
+          { text: 'Gradle 多项目构建：根项目与子项目配置、跨项目依赖', link: '/devops/build-tool/gradle-multi-project' },
+          { text: 'Gradle 插件机制：核心插件、社区插件、自定义插件开发', link: '/devops/build-tool/gradle-plugin' },
+          { text: 'Gradle 与 Maven 互操作：导入 pom.xml、maven-publish 插件', link: '/devops/build-tool/gradle-maven-interop' },
+          { text: 'Gradle 守护进程（Daemon）与配置缓存、构建缓存', link: '/devops/build-tool/gradle-daemon' },
+          { text: 'Gradle 常用命令：gradle build、dependencies、--scan、--parallel', link: '/devops/build-tool/gradle-command' },
+        ],
+      },
+      {
+        text: '构建最佳实践',
+        collapsed: false,
+        items: [
+          { text: '依赖版本管理规范：统一版本管理、禁止 SNAPSHOT 上线', link: '/devops/build-tool/dependency-version' },
+          { text: '多环境构建：Maven Profile 与 Gradle ProductFlavors', link: '/devops/build-tool/multi-env' },
+          { text: '构建产物管理：FatJar、Shade、Shadow、Spring Boot Jar 包结构', link: '/devops/build-tool/fat-jar' },
+          { text: '构建安全：依赖漏洞扫描（OWASP Dependency-Check）', link: '/devops/build-tool/security' },
+          { text: '构建工具面试高频问题汇总', link: '/devops/build-tool/interview-summary' },
+        ],
+      },
+    ],
+  },
+  {
     text: 'CI/CD',
     collapsed: false,
     items: [
@@ -201,7 +259,6 @@ export const devopsSidebar = [
         items: [
           { text: 'CI/CD 流水线设计原则', link: '/devops/cicd/pipeline-design' },
           { text: 'SonarQube 代码质量检查集成', link: '/devops/cicd/sonarqube' },
-          { text: 'Maven/Gradle 自动化构建', link: '/devops/cicd/build-tool' },
           { text: '容器镜像构建与安全扫描：Trivy、Clair', link: '/devops/cicd/image-scan' },
           { text: '制品库：Nexus、Harbor、Artifactory', link: '/devops/cicd/artifact' },
           { text: '蓝绿部署与金丝雀发布流水线', link: '/devops/cicd/blue-green' },

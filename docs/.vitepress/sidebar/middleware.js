@@ -251,6 +251,52 @@ export const middlewareSidebar = [
     collapsed: false,
     items: [
       {
+        text: '工作流引擎',
+        collapsed: false,
+        items: [
+          {
+            text: '工作流基础',
+            collapsed: false,
+            items: [
+              { text: '工作流核心概念：流程定义、流程实例、任务、流程变量', link: '/middleware/workflow/concept' },
+              { text: 'BPMN 2.0 规范：流程设计元素与建模规范', link: '/middleware/workflow/bpmn' },
+              { text: '工作流引擎选型：Flowable vs Camunda vs Activiti', link: '/middleware/workflow/compare' },
+              { text: '工作流应用场景：审批流、订单处理、自动化业务流程', link: '/middleware/workflow/use-case' },
+            ],
+          },
+          {
+            text: 'Flowable',
+            collapsed: false,
+            items: [
+              { text: 'Flowable 架构：六个核心引擎（Process、BVM、Case、DMN、Form、Content）', link: '/middleware/workflow/flowable-architecture' },
+              { text: 'Flowable 与 Activiti 的历史渊源与主要区别', link: '/middleware/workflow/flowable-vs-activiti' },
+              { text: 'Flowable 流程定义：部署、激活、挂起、删除', link: '/middleware/workflow/flowable-deployment' },
+              { text: 'Flowable 用户任务：签收任务、完成任务、任务代理与委派', link: '/middleware/workflow/flowable-task' },
+              { text: 'Flowable 网关：排他网关、并行网关、包容网关、事件网关', link: '/middleware/workflow/flowable-gateway' },
+              { text: 'Flowable 流程变量与执行上下文', link: '/middleware/workflow/flowable-variable' },
+              { text: 'Flowable 会签（Multi-Instance）：串行会签与并行会签实现', link: '/middleware/workflow/flowable-multi-instance' },
+              { text: 'Flowable 子流程：嵌入式子流程、调用活动（Call Activity）', link: '/middleware/workflow/flowable-subprocess' },
+              { text: 'Flowable 事件监听：执行监听器与任务监听器', link: '/middleware/workflow/flowable-listener' },
+              { text: 'Flowable 异步执行：作业与定时作业（Job & Timer）', link: '/middleware/workflow/flowable-async' },
+              { text: 'Flowable Spring Boot 集成与自动配置', link: '/middleware/workflow/flowable-springboot' },
+              { text: 'Flowable 数据库表结构与核心表说明', link: '/middleware/workflow/flowable-table' },
+              { text: 'Flowable 高级特性：候选用户、组任务、权限控制', link: '/middleware/workflow/flowable-identity' },
+            ],
+          },
+          {
+            text: 'Camunda',
+            collapsed: false,
+            items: [
+              { text: 'Camunda 架构：引擎、REST API、Web 应用（Camunda Web）', link: '/middleware/workflow/camunda-architecture' },
+              { text: 'Camunda BPMN 流程设计与 DMN 决策表', link: '/middleware/workflow/camunda-dmn' },
+              { text: 'Camunda 与 Spring Boot 集成', link: '/middleware/workflow/camunda-springboot' },
+              { text: 'Camunda vs Flowable 功能对比', link: '/middleware/workflow/camunda-compare' },
+            ],
+          },
+          { text: '工作流面试高频问题汇总', link: '/middleware/workflow/interview-summary' },
+        ],
+      },
+      {
         text: 'ShardingSphere',
         collapsed: false,
         items: [
