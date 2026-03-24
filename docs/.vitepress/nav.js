@@ -34,6 +34,7 @@ export const nav = [
       { text: '🔴 Redis', link: '/database/redis/index' },
       { text: '🍃 MongoDB', link: '/database/mongodb/index' },
       { text: '🐘 PostgreSQL', link: '/database/postgresql/index' },
+      { text: '⚡ TiDB', link: '/database/tidb/index' },
     ],
   },
   {
