@@ -1,0 +1,23 @@
+import{_ as n,o as a,c as e,ak as p}from"./chunks/framework.DwHlt8HN.js";const h=JSON.parse('{"title":"计算机基础","description":"","frontmatter":{},"headers":[],"relativePath":"cs/index.md","filePath":"cs/index.md","lastUpdated":1774353797000}'),l={name:"cs/index.md"};function r(i,s,t,c,d,b){return a(),e("div",null,[...s[0]||(s[0]=[p(`<h1 id="计算机基础" tabindex="-1">计算机基础 <a class="header-anchor" href="#计算机基础" aria-label="Permalink to “计算机基础”">​</a></h1><p>操作系统、计算机网络、数据结构与算法。</p><p>但「基础」二字，从来不代表「简单」。</p><p>很多人觉得计算机基础是「学校里学的东西」，工作了用不上。但真正遇到问题的时候——数据库查询为什么这么慢？（索引和 B+ 树）、接口响应时间暴增？（网络和 I/O 模型）、多线程代码死锁了？（操作系统同步原语）——你会发现，所谓的「用不上」，只是因为还没遇到那个「用得上」的时刻。</p><p>计算机基础不是面试前临时抱佛脚的知识，而是贯穿整个技术生涯的底层能力。</p><h2 id="模块速览" tabindex="-1">模块速览 <a class="header-anchor" href="#模块速览" aria-label="Permalink to “模块速览”">​</a></h2><table tabindex="0"><thead><tr><th>方向</th><th>核心目标</th></tr></thead><tbody><tr><td><a href="/cs/algorithm/index">数据结构与算法</a></td><td>常见数据结构原理、高频算法思想、复杂度分析方法</td></tr><tr><td><a href="/cs/network/index">计算机网络</a></td><td>TCP/UDP 协议、HTTP/HTTPS、DNS、I/O 多路复用</td></tr><tr><td><a href="/cs/os/index">操作系统</a></td><td>进程与线程、内存管理、文件系统、Linux 性能分析</td></tr><tr><td><a href="/cs/design-pattern/index">设计模式</a></td><td>创建型/结构型/行为型模式、源码中的应用、最佳实践</td></tr><tr><td><a href="/cs/security/index">网络安全</a></td><td>密码学基础、Web 安全、网络安全协议、安全运维与渗透测试</td></tr></tbody></table><h2 id="学习路径建议" tabindex="-1">学习路径建议 <a class="header-anchor" href="#学习路径建议" aria-label="Permalink to “学习路径建议”">​</a></h2><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>第一阶段：数据结构与算法</span></span>
+<span class="line"><span>→ 先理解「为什么需要这个数据结构」，再学习「怎么用」</span></span>
+<span class="line"><span>→ 复杂度分析是基础：能说出最好/最坏/平均/均摊时间复杂度</span></span>
+<span class="line"><span>→ 从简单题开始：数组、链表、二叉树遍历</span></span>
+<span class="line"><span>→ 进阶：回溯、动态规划、单调栈——理解模板而非死记硬背</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>第二阶段：计算机网络</span></span>
+<span class="line"><span>→ 从 OSI 七层模型建立全局观</span></span>
+<span class="line"><span>→ 重点攻破传输层：TCP 三次握手/四次挥手、滑动窗口、拥塞控制</span></span>
+<span class="line"><span>→ 应用层协议：HTTP/HTTPS 是日常工作的基础，必须深入</span></span>
+<span class="line"><span>→ 综合题：「从输入 URL 到页面展示」能完整答出来</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>第三阶段：操作系统</span></span>
+<span class="line"><span>→ 进程 vs 线程：搞清楚「资源分配」和「调度执行」的区别</span></span>
+<span class="line"><span>→ 内存管理：虚拟内存、分页、页面置换——和 JVM 内存模型对照理解</span></span>
+<span class="line"><span>→ I/O 模型：select/poll/epoll 的演进过程是高频考点</span></span>
+<span class="line"><span>→ Linux 实践：top、vmstat、iostat、strace 能用起来</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>第四阶段：设计模式</span></span>
+<span class="line"><span>→ 先理解 SOLID 原则，再学习具体模式</span></span>
+<span class="line"><span>→ 从 Spring/JDK 源码中找设计模式的实际应用</span></span>
+<span class="line"><span>→ 理解「意图」而非「结构」：代理和装饰器结构相似，意图不同</span></span>
+<span class="line"><span>→ 警惕过度设计：能用简单代码解决的，不要套模式</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h2 id="面试的核心逻辑" tabindex="-1">面试的核心逻辑 <a class="header-anchor" href="#面试的核心逻辑" aria-label="Permalink to “面试的核心逻辑”">​</a></h2><p>计算机基础的面试，不是让你背概念，而是看你对「底层原理」的理解深度：</p><ol><li><strong>能否讲清楚「为什么」</strong>：数组查询快但插入慢，链表相反——为什么？HashMap 怎么在这两者之间找到平衡？</li><li><strong>能否联系实际</strong>：TCP 的滑动窗口和数据库连接池有什么关系？epoll 的原理能解释 Redis 的单线程吗？</li><li><strong>能否举一反三</strong>：学了一种数据结构，能不能联想到其他类似场景？解决了一个问题，能不能抽象出通用方法？</li></ol><blockquote><p>&quot;计算机基础扎实的工程师，遇到新问题时能快速定位到知识的源头；基础薄弱的工程师，只能靠试错和搜索。这就是差距所在。&quot;</p></blockquote>`,13)])])}const u=n(l,[["render",r]]);export{h as __pageData,u as default};

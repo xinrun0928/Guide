@@ -1,0 +1,33 @@
+import{_ as s,o as a,c as p,ak as e}from"./chunks/framework.DwHlt8HN.js";const u=JSON.parse('{"title":"设计模式","description":"","frontmatter":{},"headers":[],"relativePath":"cs/design-pattern/index.md","filePath":"cs/design-pattern/index.md","lastUpdated":1774320699000}'),l={name:"cs/design-pattern/index.md"};function r(i,n,t,c,b,o){return a(),p("div",null,[...n[0]||(n[0]=[e(`<h1 id="设计模式" tabindex="-1">设计模式 <a class="header-anchor" href="#设计模式" aria-label="Permalink to “设计模式”">​</a></h1><p>代码的「套路」，前人的智慧结晶。</p><p>设计模式不是银弹，不是用得越多越好。但不懂设计模式，你写的代码大概率是「能用但不优雅」的——耦合度高、难以扩展、难以测试。</p><p>设计模式的核心价值在于<strong>沟通</strong>。当你说出「这里用观察者模式实现」，团队里的每个工程师都能立刻理解你的意图，而不需要你画一堆图、写一堆注释去解释。这就是设计模式作为「设计语言」的价值。</p><p>这篇文章系列覆盖三大类设计模式（创建型、结构型、行为型），结合 Java/Spring 源码中的实际应用，分析每种模式的核心意图、UML 结构、代码实现，以及适用场景和常见误区，帮助你从「会用」到「用对」的进阶。</p><h2 id="模块速览" tabindex="-1">模块速览 <a class="header-anchor" href="#模块速览" aria-label="Permalink to “模块速览”">​</a></h2><p>23 种经典设计模式，按用途分为三类。理解分类背后的逻辑，比单独记住每种模式更重要。</p><table tabindex="0"><thead><tr><th>类型</th><th>核心意图</th><th>代表模式</th></tr></thead><tbody><tr><td><strong>创建型</strong></td><td>对象怎么创建出来</td><td>单例、工厂、建造者、原型</td></tr><tr><td><strong>结构型</strong></td><td>类和对象怎么组织</td><td>适配器、装饰器、代理、桥接、组合、外观</td></tr><tr><td><strong>行为型</strong></td><td>对象间的行为怎么协调</td><td>策略、模板方法、观察者、责任链、命令、迭代器、状态</td></tr></tbody></table><h2 id="学习路径建议" tabindex="-1">学习路径建议 <a class="header-anchor" href="#学习路径建议" aria-label="Permalink to “学习路径建议”">​</a></h2><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>第一阶段：理解核心思想（1 周）</span></span>
+<span class="line"><span>→ 理解 SOLID 原则：单一职责、开闭、里氏替换、接口隔离、依赖倒置</span></span>
+<span class="line"><span>→ 理解「组合优于继承」的原则</span></span>
+<span class="line"><span>→ 从 Spring 源码中找设计模式的影子</span></span>
+<span class="line"><span>→ 结合实际项目：你的代码中有哪些可以用设计模式优化？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>第二阶段：三大类模式详解（2 周）</span></span>
+<span class="line"><span>创建型（1-2 天）</span></span>
+<span class="line"><span>→ 单例模式：饿汉 vs 懒汉 vs 双重检查锁 vs 静态内部类，DCL 的 volatile 重要性</span></span>
+<span class="line"><span>→ 工厂模式：简单工厂、工厂方法、抽象工厂的区别与适用场景</span></span>
+<span class="line"><span>→ 建造者模式：链式调用、lombok @Builder 的实现原理</span></span>
+<span class="line"><span>→ 原型模式：深拷贝 vs 浅拷贝，clone() 的正确实现</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>结构型（3-4 天）</span></span>
+<span class="line"><span>→ 适配器模式：类适配器 vs 对象适配器，Wrapper 的本质</span></span>
+<span class="line"><span>→ 装饰器模式：IO 流中的 BufferedInputStream 是怎么装饰的？</span></span>
+<span class="line"><span>→ 代理模式：静态代理 vs JDK 动态代理 vs CGLIB，Spring AOP 的实现原理</span></span>
+<span class="line"><span>→ 桥接模式：JDBC 驱动如何桥接数据库和 Java 程序</span></span>
+<span class="line"><span>→ 外观模式：Service 层是否就是外观模式？</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>行为型（1 周）</span></span>
+<span class="line"><span>→ 策略模式：消除 if-else，Spring 的 InstantiationStrategy</span></span>
+<span class="line"><span>→ 模板方法：JDBC Template 的 query() 就是模板方法</span></span>
+<span class="line"><span>→ 观察者模式：Spring 事件机制、MQ 的发布订阅</span></span>
+<span class="line"><span>→ 责任链模式：Netty 的 ChannelPipeline、Servlet Filter</span></span>
+<span class="line"><span>→ 命令模式：Runnable、ActionListener 的本质</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>第三阶段：源码中的设计模式（1 周）</span></span>
+<span class="line"><span>→ Spring：FactoryBean、BeanFactory、AOP（代理）、事务（模板方法）</span></span>
+<span class="line"><span>→ MyBatis：SqlSessionFactoryBuilder（建造者）、Executor（命令模式）</span></span>
+<span class="line"><span>→ Spring MVC：HandlerMapping、ViewResolver</span></span>
+<span class="line"><span>→ JDK：Collections.sort()（策略+模板）、InputStream（装饰器）</span></span>
+<span class="line"><span>→ Guava Cache：LoadingCache（异步装饰器）、RemovalListener（观察者）</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><h2 id="为什么设计模式容易用错" tabindex="-1">为什么设计模式容易用错？ <a class="header-anchor" href="#为什么设计模式容易用错" aria-label="Permalink to “为什么设计模式容易用错？”">​</a></h2><p>设计模式最常见的误区是「过度设计」——为了用模式而用模式，把简单的代码写得复杂。</p><p>一个简单的判断标准：<strong>如果这个模式让你的代码更难理解，那就不要用。</strong> 设计模式的目的是降低复杂度，而不是增加复杂度。</p><p>另一个常见问题是<strong>混淆模式</strong>。比如代理模式和装饰器模式，结构上几乎一模一样，区别在于意图：</p><ul><li><strong>代理模式</strong>：控制对对象的访问，侧重「我能不能访问」</li><li><strong>装饰器模式</strong>：增强对象的行为，侧重「我怎样增强它」</li></ul><p>再比如策略模式和模板方法：</p><ul><li><strong>策略模式</strong>：把算法封装成独立对象，组合使用</li><li><strong>模板方法</strong>：把算法骨架定好，具体步骤由子类实现，继承使用</li></ul><p>理解意图上的区别，比记住 UML 结构更重要。</p><h2 id="面试的核心逻辑" tabindex="-1">面试的核心逻辑 <a class="header-anchor" href="#面试的核心逻辑" aria-label="Permalink to “面试的核心逻辑”">​</a></h2><p>设计模式面试分为三个层次：</p><p><strong>第一层：会说。</strong> 能讲清楚什么是单例模式、工厂模式、代理模式、策略模式。知道它们的 UML 结构。</p><p><strong>第二层：会用。</strong> 能结合实际场景说出「这里适合用 XXX 模式」并写出代码。知道 Spring 中哪些地方用到了这些模式。</p><p><strong>第三层：会用对。</strong> 能分析一个模式的优点和局限。比如单例模式在多线程环境下的问题、代理模式带来的性能开销、过度使用工厂模式导致的类爆炸。</p><blockquote><p>&quot;面试官最想看到的，不是你背了多少种设计模式，而是你能不能在合适的场景下，恰到好处地使用它们。『我选择不用设计模式，因为这里直接写更清晰』——这种回答，往往比硬套模式加分。&quot;</p></blockquote>`,24)])])}const m=s(l,[["render",r]]);export{u as __pageData,m as default};

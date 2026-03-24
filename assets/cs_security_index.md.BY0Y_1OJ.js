@@ -1,0 +1,29 @@
+import{_ as n,o as a,c as p,ak as e}from"./chunks/framework.DwHlt8HN.js";const o=JSON.parse('{"title":"网络安全","description":"","frontmatter":{},"headers":[],"relativePath":"cs/security/index.md","filePath":"cs/security/index.md","lastUpdated":1774353797000}'),l={name:"cs/security/index.md"};function r(i,s,t,c,b,d){return a(),p("div",null,[...s[0]||(s[0]=[e(`<h1 id="网络安全" tabindex="-1">网络安全 <a class="header-anchor" href="#网络安全" aria-label="Permalink to “网络安全”">​</a></h1><blockquote><p>在互联网时代，安全不是可选项，而是必选项。</p></blockquote><p>你可能觉得安全离自己很远——「我的网站又没什么机密数据，黑客怎么会盯上我？」</p><p>但现实是：绝大多数攻击不是「定向打击」，而是「自动扫描」。黑客的脚本会在全球互联网上漫游，寻找存在漏洞的服务器。你的网站可能只是成千上万个「猎物」中的一个。</p><p>更可怕的是，安全事件的代价远超你的想象：数据泄露的赔偿、用户信任的流失、法律诉讼的风险……一次成功的入侵，可能让多年的努力付诸东流。</p><p><strong>安全的本质，是在攻击者和防御者之间不断升级的军备竞赛中，找到属于自己的防线。</strong></p><h2 id="模块速览" tabindex="-1">模块速览 <a class="header-anchor" href="#模块速览" aria-label="Permalink to “模块速览”">​</a></h2><table tabindex="0"><thead><tr><th>方向</th><th>核心目标</th></tr></thead><tbody><tr><td><a href="/cs/security/symmetric-encryption">密码学基础</a></td><td>对称加密、非对称加密、哈希、数字签名、密钥交换</td></tr><tr><td><a href="/cs/security/authentication">身份认证与授权</a></td><td>OAuth2、OIDC、SSO、RBAC、零信任架构</td></tr><tr><td><a href="/cs/security/xss">应用层安全</a></td><td>XSS、CSRF、SQL 注入、文件上传安全、序列化漏洞</td></tr><tr><td><a href="/cs/security/tls">网络层安全</a></td><td>TLS/HTTPS、DNS 安全、VPN、防火墙、IDS/IPS</td></tr><tr><td><a href="/cs/security/buffer-overflow">系统层安全</a></td><td>缓冲区溢出、ROP、权限提升、后门检测、沙箱技术</td></tr><tr><td><a href="/cs/security/pentest">安全运维</a></td><td>渗透测试、漏洞扫描、代码审计、SIEM、应急响应</td></tr></tbody></table><h2 id="学习路径建议" tabindex="-1">学习路径建议 <a class="header-anchor" href="#学习路径建议" aria-label="Permalink to “学习路径建议”">​</a></h2><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e;" tabindex="0" dir="ltr"><code><span class="line"><span>第一阶段：密码学基础</span></span>
+<span class="line"><span>→ 理解对称加密和非对称加密的区别与适用场景</span></span>
+<span class="line"><span>→ 掌握哈希的本质：单向性、碰撞阻力、原像阻力</span></span>
+<span class="line"><span>→ 理解混合加密体系：为什么 TLS 选择混合加密</span></span>
+<span class="line"><span>→ 了解国密算法：SM2/SM3/SM4 的适用场景</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>第二阶段：身份认证与授权</span></span>
+<span class="line"><span>→ 从 Cookie/Session 到 JWT，理解认证机制演进</span></span>
+<span class="line"><span>→ OAuth2 的四种授权模式：选对场景比选对技术更重要</span></span>
+<span class="line"><span>→ OIDC 在 OAuth2 基础上解决了什么问题</span></span>
+<span class="line"><span>→ RBAC vs ABAC：权限模型的适用场景</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>第三阶段：应用层安全</span></span>
+<span class="line"><span>→ OWASP Top 10 是基础：每一种漏洞都要能讲清楚原理和防御</span></span>
+<span class="line"><span>→ 理解注入的本质：用户输入被当作代码执行</span></span>
+<span class="line"><span>→  CSRF 和 XSS 的区别与联系：两种「跨」的思路</span></span>
+<span class="line"><span>→  文件上传：不仅仅要检查扩展名</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>第四阶段：网络层安全</span></span>
+<span class="line"><span>→ TLS 握手过程：为什么需要 CA 证书</span></span>
+<span class="line"><span>→ HTTPS 的完整流程：从 TCP 到 TLS 到 HTTP</span></span>
+<span class="line"><span>→ 防火墙的三种类型：包过滤、状态检测、应用层网关</span></span>
+<span class="line"><span>→ 了解 IDS 和 IPS 的区别：检测与阻断</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>第五阶段：系统层安全与安全运维</span></span>
+<span class="line"><span>→ 缓冲区溢出的原理：栈帧、返回地址、shellcode</span></span>
+<span class="line"><span>→ 渗透测试方法论：信息收集 → 漏洞探测 → 漏洞利用 → 权限提升</span></span>
+<span class="line"><span>→ SIEM 的核心功能：日志收集、关联分析、告警响应</span></span>
+<span class="line"><span>→ 应急响应流程：隔离 → 排查 → 修复 → 复盘</span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h2 id="为什么学安全" tabindex="-1">为什么学安全 <a class="header-anchor" href="#为什么学安全" aria-label="Permalink to “为什么学安全”">​</a></h2><p>很多人学安全是为了面试——「有没有安全面试题？」</p><p>但我更想说的是：<strong>安全知识不是面试前临时背诵的内容，而是日常开发中需要内化的意识。</strong></p><p>写 SQL 查询时，你会想到 SQL 注入；处理用户上传时，你会检查文件类型；设计 API 时，你会考虑权限控制——这才是安全知识真正发挥作用的时候。</p><p>当你能够从攻击者的角度思考问题时，你才能真正成为一道合格的防线。</p><blockquote><p>&quot;不懂攻击的防御，就像不懂敌人的战争。&quot;</p></blockquote>`,16)])])}const h=n(l,[["render",r]]);export{o as __pageData,h as default};
