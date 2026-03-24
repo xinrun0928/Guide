@@ -16,7 +16,7 @@ export default defineConfig({
 
   // 部署路径，根据环境自动切换
   // 本地开发: / (根目录)
-  // GitHub Pages: /DBInsight/
+  // GitHub Pages: /Guide/
   base,
 
   // 站点语言，影响 HTML lang 属性和搜索功能
@@ -80,18 +80,18 @@ export default defineConfig({
 
     // 社交链接，显示在导航栏
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/xinrun0928/DBInsight.git' },
+      { icon: 'github', link: 'https://github.com/xinrun0928/Guide.git' },
     ],
 
     // 页脚配置
     footer: {
       message: '基于 VitePress 构建',
-      copyright: 'Copyright © 2025-2026 <a href="https://github.com/xinrun0928/DBInsight">DBInsight</a>',
+      copyright: 'Copyright © 2025-2026 <a href="https://github.com/xinrun0928/Guide">Guide</a>',
     },
 
     // 编辑链接，引导用户到 GitHub 编辑页面
     editLink: {
-      pattern: 'https://github.com/xinrun0928/DBInsight/edit/main/docs/:path',
+      pattern: 'https://github.com/xinrun0928/Guide/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页',
     },
 
