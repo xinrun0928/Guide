@@ -125,6 +125,7 @@ export default defineConfig({
       dark: 'github-dark',    // 深色模式主题
     },
     lineNumbers: true,         // 是否在代码块显示行号
+    nativeHtml: false, // 关键：关闭原生 HTML 解析
 
     // Shiki 未内置的 fence 语言名：映射到已有语法，避免回退为 txt 并消除构建警告
     // @see https://vitepress.dev/zh/guide/markdown#markdown-options
@@ -139,10 +140,12 @@ export default defineConfig({
       // VitePress 会把 Markdown 渲染结果继续交给 Vue 编译。
       // 但很多文章里会出现 `{{ ... }}`（如 Helm/Go template），Vue 会误把它当成插值语法并在构建时报错。
       // 这里把 `{{` / `}}` 预先转义为 HTML 实体，避免 Vue 在解析阶段触发插值。
+      // 同时转义 `</` 防止 Vue 把 YAML 中的 `export:` `endpoints:` 等误认为 HTML 标签
       const escapeVueMustache = (s) =>
         s
           .replace(/{{/g, '&#123;&#123;')
           .replace(/}}/g, '&#125;&#125;')
+          .replace(/</g, '&lt;')
 
       const visitToken = (token) => {
         if (!token) return

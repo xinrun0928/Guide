@@ -93,15 +93,17 @@ userFuture.thenAcceptBoth(productFuture, (user, product) -> {
 ### 与 thenCombine 的区别
 
 | 方法 | 返回值 | 适用场景 |
-|-----|--------|---------|
+| --- | --- | --- |
 | `thenCombine` | `CF<R>` | 需要根据两个结果计算新值 |
 | `thenAcceptBoth` | `CF<Void>` | 只是使用两个结果，不产生新值 |
 
+`thenCombine` 和 `thenAcceptBoth` 的核心区别在于是否需要返回值：
+
 ```java
-// thenCombine：计算新值
+// thenCombine：计算新值，返回 CF<R>
 cf1.thenCombine(cf2, (r1, r2) -> r1 + r2);  // 返回 CF<Integer>
 
-// thenAcceptBoth：只消费
+// thenAcceptBoth：只消费，不返回新值
 cf1.thenAcceptBoth(cf2, (r1, r2) -> System.out.println(r1 + r2));  // 返回 CF<Void>
 ```
 
@@ -221,7 +223,7 @@ public class OrderProcessDemo {
 ## 方法对比表
 
 | 方法 | 接收参数 | 返回值 | 是否关心结果 | 何时执行 |
-|-----|---------|--------|-------------|---------|
+| --- | --- | --- | --- | --- |
 | `thenAccept` | `Consumer<T>` | `CF<Void>` | ✅ 只关心上一个 | 上一个完成后 |
 | `thenRun` | `Runnable` | `CF<Void>` | ❌ 都不关心 | 上一个完成后 |
 | `thenAcceptBoth` | `CF2, BiConsumer` | `CF<Void>` | ✅ 关心两个 | 两个都完成后 |
