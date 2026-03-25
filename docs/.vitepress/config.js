@@ -126,6 +126,7 @@ export default defineConfig({
     },
     lineNumbers: true,         // 是否在代码块显示行号
     nativeHtml: false, // 关键：关闭原生 HTML 解析
+    vPre: true,          // 代码块不解析模板
 
     // Shiki 未内置的 fence 语言名：映射到已有语法，避免回退为 txt 并消除构建警告
     // @see https://vitepress.dev/zh/guide/markdown#markdown-options
@@ -134,6 +135,15 @@ export default defineConfig({
       promql: 'sql',     // PromQL 无独立 grammar，用类查询高亮近似展示
       conf: 'ruby',      // Logstash 等 DSL 与 Ruby 块语法较接近
     },
+
+      // 👇 只加载你用到的语言，速度爆炸提升
+    codeTransformers: [
+      {
+        code(node) {
+          node.langs = ['java', 'yaml', 'go', 'python', 'markdown']
+        }
+      }
+    ],
 
     // Markdown 扩展配置，可添加自定义插件
     config: (md) => {
@@ -174,10 +184,12 @@ export default defineConfig({
       host: true,              // 允许外部访问（0.0.0.0）
     },
     build: {
+      minify: false,          // 关闭代码压缩（打包速度提升 50%+）
       sourcemap: false, // 关闭 sourcemap（大幅减内存）
       minify: 'esbuild', // 最快压缩
-      chunkSizeWarningLimit: 5000,
+      chunkSizeWarningLimit: 2000,
       rollupOptions: {
+        maxParallelFileOps: 10, // 多线程并行处理
         output: {
           // 手动分块：避免单文件过大
           manualChunks(id) {
@@ -190,6 +202,7 @@ export default defineConfig({
     },
     optimizeDeps: {
       exclude: ['vitepress'], // 禁用预构建（大幅省内存）
+      noDiscovery: true // 关闭依赖预扫描
     }
   },
 

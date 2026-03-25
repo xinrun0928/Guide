@@ -63,7 +63,7 @@ jobs:
           # 标记为生产环境部署，使用 /JTechVault/ 作为 base 路径
           VITEPRESS_DEPLOY: true
           # 分配 10GB 内存给 Node.js 进程，避免大文档构建时 OOM
-          NODE_OPTIONS: --max-old-space-size=10240
+          NODE_OPTIONS: --max-old-space-size=12288
         run: npm run build
 
       # 5. 配置 GitHub Pages
