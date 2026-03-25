@@ -138,8 +138,7 @@ export default defineConfig({
 
     // 👇 固定语法高亮，彻底解决 thrift 未加载警告
     languages: [
-      'java', 'yaml', 'go', 'python', 
-      'markdown', 'txt', 'bash', 'json'
+      'java', 'yaml', 'go', 'python', 'markdown', 'txt', 'bash', 'json'
     ],
 
     // 清理 Shiki 错误配置
@@ -185,15 +184,7 @@ export default defineConfig({
       minify: 'esbuild', // 最快压缩
       chunkSizeWarningLimit: 2000,
       rollupOptions: {
-        maxParallelFileOps: 10, // 多线程并行处理
-        output: {
-          // 手动分块：避免单文件过大
-          manualChunks(id) {
-            if (id.includes('node_modules')) return 'vendor'
-            if (id.includes('theme')) return 'theme'
-            if (id.includes('docs')) return 'docs'
-          }
-        }
+        maxParallelFileOps: 10
       }
     },
     optimizeDeps: {
