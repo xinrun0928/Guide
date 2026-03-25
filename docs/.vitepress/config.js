@@ -136,14 +136,14 @@ export default defineConfig({
       conf: 'ruby',      // Logstash 等 DSL 与 Ruby 块语法较接近
     },
 
-      // 👇 只加载你用到的语言，速度爆炸提升
-    codeTransformers: [
-      {
-        code(node) {
-          node.langs = ['java', 'yaml', 'go', 'python', 'markdown']
-        }
-      }
+    // 👇 固定语法高亮，彻底解决 thrift 未加载警告
+    languages: [
+      'java', 'yaml', 'go', 'python', 
+      'markdown', 'txt', 'bash', 'json'
     ],
+
+    // 清理 Shiki 错误配置
+    codeTransformers: [],
 
     // Markdown 扩展配置，可添加自定义插件
     config: (md) => {
@@ -176,9 +176,6 @@ export default defineConfig({
 
   // ==================== Vite 配置 ====================
   vite: {
-    ssr: {
-      noExternal: ['vitepress'] // 减少内存占用
-    },
     server: {
       port: 3000,              // 开发服务器端口
       host: true,              // 允许外部访问（0.0.0.0）
