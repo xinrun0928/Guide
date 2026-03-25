@@ -36,7 +36,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'      # 使用 Node.js 20 LTS 版本
+          node-version: '20'      # 使用 Node.js 20 LTS 版本
           cache: 'npm'            # 缓存 npm 依赖，加快构建速度
 
       # 3. 安装依赖 - 根据 package-lock.json 安装（比 npm install 更稳定）
