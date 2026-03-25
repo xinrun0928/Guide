@@ -184,7 +184,6 @@ export default defineConfig({
       host: true,              // 允许外部访问（0.0.0.0）
     },
     build: {
-      minify: false,          // 关闭代码压缩（打包速度提升 50%+）
       sourcemap: false, // 关闭 sourcemap（大幅减内存）
       minify: 'esbuild', // 最快压缩
       chunkSizeWarningLimit: 2000,
