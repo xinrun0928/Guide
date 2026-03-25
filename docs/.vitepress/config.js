@@ -163,14 +163,31 @@ export default defineConfig({
 
   // ==================== Vite 配置 ====================
   vite: {
+    ssr: {
+      noExternal: ['vitepress'] // 减少内存占用
+    },
     server: {
       port: 3000,              // 开发服务器端口
       host: true,              // 允许外部访问（0.0.0.0）
     },
     build: {
-      // 超过此大小的 chunk 会触发警告（单位：KB）
-      chunkSizeWarningLimit: 1500,
+      sourcemap: false, // 关闭 sourcemap（大幅减内存）
+      minify: 'esbuild', // 最快压缩
+      chunkSizeWarningLimit: 5000,
+      rollupOptions: {
+        output: {
+          // 手动分块：避免单文件过大
+          manualChunks(id) {
+            if (id.includes('node_modules')) return 'vendor'
+            if (id.includes('theme')) return 'theme'
+            if (id.includes('docs')) return 'docs'
+          }
+        }
+      }
     },
+    optimizeDeps: {
+      exclude: ['vitepress'], // 禁用预构建（大幅省内存）
+    }
   },
 
   // 是否生成干净的 URL（无 .html 后缀）

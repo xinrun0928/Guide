@@ -4,14 +4,15 @@
   "description": "Java 面试指南 — 系统梳理 Java、计算机基础、数据库、常用框架、分布式、高性能、高可用核心知识",
   "scripts": {
     "dev": "vitepress dev docs",
-    "build": "NODE_OPTIONS=--max-old-space-size=8192 vitepress build docs",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 vitepress build docs",
     "preview": "vitepress preview docs",
-    "deploy": "VITEPRESS_DEPLOY=true NODE_OPTIONS=--max-old-space-size=8192 vitepress build docs && sh deploy.sh"
+    "deploy": "cross-env VITEPRESS_DEPLOY=true NODE_OPTIONS=--max-old-space-size=8192 vitepress build docs && sh deploy.sh"
   },
   "dependencies": {
     "vitepress-plugin-comment-with-giscus": "^1.1.15"
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "vitepress": "^2.0.0-alpha.15"
   }
 }
