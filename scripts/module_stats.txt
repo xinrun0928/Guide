@@ -1,0 +1,19 @@
+模块文档数量统计
+生成时间: 2026-03-26 09:11:42
+================================================================
+
+database                        349 篇（含 index/README: 357）
+devops                          200 篇（含 index/README: 212）
+middleware                      190 篇（含 index/README: 216）
+java                            187 篇（含 index/README: 194）
+framework                       168 篇（含 index/README: 177）
+cs                              143 篇（含 index/README: 149）
+high-performance                130 篇（含 index/README: 138）
+distributed                     122 篇（含 index/README: 134）
+interview                        67 篇（含 index/README: 68）
+public                            0 篇（含 index/README: 0）
+
+----------------------------------------------------------------
+合计                         1557 篇（含 index/README: 1647）
+
+说明：统计不含 index.md 和 README.md

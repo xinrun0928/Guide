@@ -3,7 +3,7 @@ export const csSidebar = [
     text: '计算机基础',
     collapsed: false,
     items: [
-      { text: ' overview', link: '/cs/index' },
+      { text: 'overview', link: '/cs/index' },
     ],
   },
   {
