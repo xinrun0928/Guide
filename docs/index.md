@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 开始学习
-      link: /guide/getting-started
+      link: /getting-started
     - theme: alt
       text: Java 专题
       link: /java/index
@@ -20,7 +20,7 @@ features:
   - icon: 📝
     title: 面试准备
     details: 简历优化、自我介绍、项目包装技巧，以及行为面试的应对思路，帮你在面试前做好万全准备
-    link: /prepare/index
+    link: /interview/index
     linkText: 开始准备
 
   - icon: ☕
@@ -56,12 +56,12 @@ features:
   - icon: ⚡
     title: 高性能
     details: 缓存策略、异步与消峰、数据库读写分离与分库分表，性能优化的思路与方案
-    link: /performance/index
+    link: /high-performance/index
     linkText: 开始学习
 
   - icon: 🛡️
     title: 高可用
     details: 限流、熔断、降级、容灾与故障转移，构建稳定可靠系统的核心设计模式
-    link: /availability/index
+    link: /high-performance/ha/index
     linkText: 开始学习
 ---
